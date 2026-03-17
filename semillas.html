@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Semillas — Agroquímicos Darío | Lavalle, Mendoza</title>
+  <meta name="description" content="Catálogo de semillas: sandía, melón, tomate, zapallo, zapallito, pimiento, berenjena y cebolla. Marcas Fusari, Origene, Westar, Yuksel y Custom. Lavalle, Mendoza.">
+  <meta name="keywords" content="semillas mendoza, semillas hortalizas, fusari semillas, sandía, melón, tomate, zapallo, pimiento, berenjena, cebolla, lavalle mendoza">
+  <link rel="canonical" href="https://agroquimicosdario.com.ar/semillas.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semillas — Agroquímicos Darío">
+  <meta property="og:description" content="Variedades de alta performance para el productor mendocino. Sandía, melón, tomate, zapallo y más.">
+  <meta property="og:url" content="https://agroquimicosdario.com.ar/semillas.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ═══════════════════════════════════════
+       HERO DE PÁGINA
+    ═══════════════════════════════════════ */
+    .page-hero {
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 120px 6% 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        /* linear-gradient(160deg, rgba(53, 129, 43, 0.88) 0%, rgba(91, 122, 85, 0.6) 60%, rgba(39, 133, 27, 0.85) 100%), */
+        url('assets/img/semillas-hero.png') center/cover no-repeat;
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+
+    .page-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 900; line-height: .95;
+      color: #fff; letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+    .page-hero h1 em { font-style: italic; color: #f5b800; font-weight: 300; }
+
+    .page-hero-desc {
+      font-size: 17px; color: rgba(255,255,255,.6);
+      font-weight: 300; max-width: 520px; line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .page-hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    /* breadcrumb */
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb .sep { color: rgba(255,255,255,.2); }
+    .breadcrumb .current { color: #f5b800; font-weight: 500; }
+
+    /* ═══════════════════════════════════════
+       INTRO — texto + marcas
+    ═══════════════════════════════════════ */
+    #intro {
+      padding: 72px 6%;
+      background: var(--crema);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .intro-text .section-lead {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--tierra); margin-bottom: 20px;
+    }
+    .intro-text .section-lead em { font-style: italic; color: var(--campo); }
+    .intro-text p {
+      font-size: 15px; color: var(--gris);
+      line-height: 1.85; font-weight: 300; margin-bottom: 14px;
+    }
+    .intro-text p:last-of-type { margin-bottom: 0; }
+
+    .intro-marcas h3 {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--campo); font-weight: 600; margin-bottom: 24px;
+    }
+    .marcas-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .marca-card {
+      background: #fff;
+      border: 1px solid rgba(45,122,31,.1);
+      border-radius: 8px;
+      padding: 20px 16px;
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 3/2;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .marca-card:hover {
+      border-color: rgba(45,122,31,.3);
+      box-shadow: 0 4px 16px rgba(45,122,31,.08);
+    }
+    .marca-card span {
+      font-family: 'Fraunces', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--campo); letter-spacing: .5px;
+      text-align: center;
+    }
+    /* cuando tengas los logos, reemplazá el <span> por <img> */
+    .marca-card img { max-width: 80%; max-height: 40px; object-fit: contain; }
+
+    /* ═══════════════════════════════════════
+       CATÁLOGO — filtro + grilla
+    ═══════════════════════════════════════ */
+    #catalogo {
+      padding: 80px 6% 100px;
+      background: var(--humo);
+    }
+    .catalogo-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 48px;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .catalogo-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 700; color: var(--tierra); line-height: 1.1;
+    }
+    .catalogo-header h2 em { font-style: italic; color: var(--campo); }
+
+    /* filtros */
+    .filtros {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .filtro-btn {
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; cursor: pointer;
+      border: 1.5px solid rgba(45,122,31,.2);
+      background: transparent; color: var(--campo);
+      font-family: 'Inter', sans-serif;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .filtro-btn:hover,
+    .filtro-btn.active {
+      background: var(--campo); color: #fff; border-color: var(--campo);
+    }
+
+    /* grilla de cultivos */
+    .cultivos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .cultivo-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(45,122,31,.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+    .cultivo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .cultivo-card.hidden { display: none; }
+
+    .cultivo-img {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .cultivo-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s ease;
+      display: block;
+    }
+    .cultivo-card:hover .cultivo-img img { transform: scale(1.06); }
+
+    .cultivo-tag {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--campo); color: #fff;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 50px;
+    }
+
+    .cultivo-body { padding: 20px; }
+    .cultivo-nombre {
+      font-family: 'Fraunces', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--tierra); margin-bottom: 8px;
+    }
+    .cultivo-marcas {
+      font-size: 12px; color: var(--gris);
+      font-weight: 300; margin-bottom: 16px; line-height: 1.5;
+    }
+    .cultivo-marcas strong { color: var(--campo); font-weight: 600; }
+
+    .cultivo-vars {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-bottom: 16px;
+    }
+    .var-pill {
+      background: var(--humo);
+      border: 1px solid rgba(45,122,31,.15);
+      color: var(--gris);
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 50px;
+    }
+
+    .cultivo-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid rgba(45,122,31,.08);
+    }
+    .cultivo-cta a {
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--campo);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap .2s;
+    }
+    .cultivo-cta a:hover { gap: 10px; }
+    .cultivo-cta .wa-mini {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #25d366; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: transform .2s, filter .2s;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+    }
+    .cultivo-cta .wa-mini i { font-size: 15px; color: #fff; }
+    .cultivo-cta .wa-mini:hover { transform: scale(1.08); filter:brightness(1.07); }
+
+    /* ═══════════════════════════════════════
+       CTA FINAL
+    ═══════════════════════════════════════ */
+    #cta-final {
+      background: var(--tierra);
+      padding: 80px 6%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-final-text { position: relative; z-index: 1; }
+    .cta-final-text h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 10px;
+    }
+    .cta-final-text h2 em { font-style: italic; color: #f5b800; }
+    .cta-final-text p { font-size: 15px; color: rgba(255,255,255,.5); font-weight: 300; }
+    .cta-final-btns {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+    }
+    .btn-amarillo {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #f5b800; color: var(--tierra);
+      padding: 15px 28px; border-radius: 50px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      letter-spacing: .5px; white-space: nowrap;
+      transition: filter .2s, transform .2s;
+    }
+    .btn-amarillo:hover { filter: brightness(1.08); transform: translateY(-2px); }
+    .btn-link-blanco {
+      font-size: 13px; color: rgba(255,255,255,.5); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color .2s;
+    }
+    .btn-link-blanco:hover { color: #fff; }
+
+    /* ═══════════════════════════════════════
+       MODALES DE VARIEDADES
+    ═══════════════════════════════════════ */
+
+    /* overlay */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(8,15,7,.75);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1; pointer-events: all;
+    }
+
+    /* caja del modal */
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%; max-width: 860px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transform: translateY(24px) scale(.97);
+      transition: transform .3s ease;
+      box-shadow: 0 32px 80px rgba(0,0,0,.3);
+    }
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    /* cabecera */
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid rgba(45,122,31,.1);
+      flex-shrink: 0;
+    }
+    .modal-header-left { display: flex; flex-direction: column; gap: 4px; }
+    .modal-eyebrow {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--campo); font-weight: 600;
+    }
+    .modal-title {
+      font-family: 'Fraunces', serif;
+      font-size: 26px; font-weight: 700; color: var(--tierra); line-height: 1;
+    }
+    .modal-close {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--humo); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gris); font-size: 16px;
+      transition: background .2s, color .2s;
+      flex-shrink: 0;
+    }
+    .modal-close:hover { background: var(--campo); color: #fff; }
+
+    /* cuerpo scrolleable */
+    .modal-body {
+      overflow-y: auto; padding: 28px;
+      flex: 1;
+    }
+
+    /* subtítulo de grupo (ej: "Diploide") */
+    .modal-group-title {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gris); font-weight: 600;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(45,122,31,.1);
+    }
+    .modal-group-title:not(:first-child) { margin-top: 28px; }
+
+    /* grilla de variedades */
+    .modal-vars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .var-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(45,122,31,.1);
+      background: var(--crema);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .var-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.1);
+    }
+    .var-card-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--humo);
+    }
+    .var-card-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .4s;
+    }
+    .var-card:hover .var-card-img img { transform: scale(1.06); }
+    .var-card-name {
+      font-family: 'Fraunces', serif;
+      font-size: 14px; font-weight: 700;
+      color: var(--tierra);
+      padding: 10px 12px 12px;
+      text-align: center;
+    }
+
+    /* pie del modal */
+    .modal-footer {
+      padding: 16px 28px 24px;
+      border-top: 1px solid rgba(45,122,31,.08);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .modal-footer p {
+      font-size: 13px; color: var(--gris); font-weight: 300;
+    }
+    .modal-wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366; color: #fff;
+      padding: 12px 22px; border-radius: 50px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.15);
+      transition: filter .2s, transform .2s;
+      white-space: nowrap;
+    }
+    .modal-wa-btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+
+    /* botón "Ver variedades" en las cards — ahora es un button */
+    .btn-ver-variedades {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--campo);
+      display: flex; align-items: center; gap: 6px;
+      padding: 0; transition: gap .2s;
+    }
+    .btn-ver-variedades:hover { gap: 10px; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media(max-width: 1100px) {
+      .cultivos-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media(max-width: 900px) {
+      #intro { grid-template-columns: 1fr; gap: 48px; }
+      .cultivos-grid { grid-template-columns: repeat(2, 1fr); }
+      #cta-final { grid-template-columns: 1fr; }
+      .cta-final-btns { align-items: flex-start; }
+    }
+    @media(max-width: 540px) {
+      .cultivos-grid { grid-template-columns: 1fr; }
+      .marcas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/42750a99cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR (igual en todas las páginas)
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.png" alt="Agroquímicos Darío  : green curved leaf with yellow sun, company name in blue text, established 1992 in Lavalle, Mendoza" class="nav-logo-name">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" class="active">Productos</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="semillas.html" style="color:var(--campo)!important;font-weight:600">● Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li>
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+    </button>
+  </nav>
+
+  <!-- Menú mobile -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="semillas.html" style="color:var(--campo)">Semillas</a>
+    <a href="nutricion.html">Nutrición Vegetal</a>
+    <a href="proteccion.html">Protección Vegetal</a>
+    <a href="herramientas.html">Herramientas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="index.html#marcas">Marcas</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="mobile-wa"><i class="fa-brands fa-whatsapp"></i> Escribinos por WhatsApp</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span class="sep">/</span>
+        <span class="current">Semillas</span>
+      </nav>
+      <h1>Semillas de<br><em>alta performance</em></h1>
+      <p class="page-hero-desc">
+        Variedades seleccionadas para el clima y el suelo del norte mendocino.
+        Trabajamos con las mejores marcas del mercado para asegurar tu producción.
+      </p>
+      <div class="page-hero-actions">
+        <a href="#catalogo" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Ver catálogo completo</a>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20semillas" target="_blank" rel="noopener" class="btn-outline">Consultar disponibilidad <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO + MARCAS
+  ═══════════════════════════════════════════ -->
+  <section id="intro">
+    <div class="intro-text r">
+      <h2 class="section-lead">
+        La semilla correcta<br>define toda<br><em>la campaña</em>
+      </h2>
+      <p>
+        En Agroquímicos Darío seleccionamos variedades probadas en el norte mendocino. Cada cultivo que ofrecemos está elegido por rendimiento, adaptación al clima local y resistencia a las condiciones del suelo de Lavalle.
+      </p>
+      <p>
+        Nuestro equipo te asesora sin cargo para que elijas la variedad que mejor se adapta a tu parcela, sistema de riego y destino de producción — ya sea consumo fresco o industria.
+      </p>
+    </div>
+    <div class="intro-marcas r d2">
+      <h3>Marcas con las que trabajamos</h3>
+      <div class="marcas-grid">
+        <!-- Reemplazá el <span> por <img src="assets/img/logo-fusari.png"> cuando tengas los logos -->
+        <div class="marca-card"><span>FUSARI</span></div>
+        <div class="marca-card"><span>ORIGENE</span></div>
+        <div class="marca-card"><span>WESTAR</span></div>
+        <div class="marca-card"><span>YUKSEL</span></div>
+        <div class="marca-card"><span>CUSTOM</span></div>
+        <div class="marca-card" style="background:var(--humo);border-style:dashed">
+          <span style="font-size:12px;opacity:.5">+ más marcas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CATÁLOGO DE CULTIVOS
+  ═══════════════════════════════════════════ -->
+  <section id="catalogo">
+    <div class="catalogo-header r">
+      <div>
+        <span class="eyebrow eyebrow--green">Catálogo de variedades</span>
+        <h2>Nuestros <em>cultivos</em></h2>
+      </div>
+      <!-- Filtros por tipo de cultivo -->
+      <div class="filtros" role="group" aria-label="Filtrar por cultivo">
+        <button class="filtro-btn active" data-filter="todos">Todos</button>
+        <button class="filtro-btn" data-filter="fruta">Frutas</button>
+        <button class="filtro-btn" data-filter="hortaliza">Hortalizas</button>
+        <button class="filtro-btn" data-filter="allium">Bulbos</button>
+      </div>
+    </div>
+
+    <div class="cultivos-grid">
+
+      <!-- 01 · SANDÍA -->
+      <div class="cultivo-card r d1" data-categoria="fruta">
+        <div class="cultivo-img">
+          <!-- Reemplazar con foto propia: assets/img/semillas-sandia.jpg -->
+          <img src="assets/img/semillas/semillas-sandia.jpg" alt="Semillas de sandía" loading="lazy">
+          <span class="cultivo-tag">Fruta</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Sandía</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Origene · Yuksel · Westar</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Con semilla</span>
+            <span class="var-pill">Sin semilla</span>
+            <span class="var-pill">Mini</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('sandia')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 · MELÓN -->
+      <div class="cultivo-card r d2" data-categoria="fruta">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-melon.jpg" alt="Semillas de melón" loading="lazy">
+          <span class="cultivo-tag">Fruta</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Melón</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Origene · Custom · Westar</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">River Dew</span>
+            <span class="var-pill">Honey Dew</span>
+            <span class="var-pill">Amarillo</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('melon')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 · TOMATE -->
+      <div class="cultivo-card r d3" data-categoria="hortaliza">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-tomate.jpeg" alt="Semillas de tomate" loading="lazy">
+          <span class="cultivo-tag">Hortaliza</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Tomate</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Fusari · Origene · Yuksel</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Perita</span>
+            <span class="var-pill">Redondo</span>
+            <span class="var-pill">Cherry</span>
+            <span class="var-pill">Industria</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('tomate')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 · ZAPALLO -->
+      <div class="cultivo-card r d4" data-categoria="hortaliza">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-zapallo.jpg" alt="Semillas de zapallo" loading="lazy">
+          <span class="cultivo-tag">Hortaliza</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Zapallo</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Fusari · Custom · Westar</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Anquito</span>
+            <span class="var-pill">Criollo</span>
+            <span class="var-pill">Kabutia</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('zapallo')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 · ZAPALLITO -->
+      <div class="cultivo-card r d1" data-categoria="hortaliza">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-zapallito.jpg" alt="Semillas de zapallito" loading="lazy">
+          <span class="cultivo-tag">Hortaliza</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Zapallito</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Fusari · Origene</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Redondo</span>
+            <span class="var-pill">Largo</span>
+            <span class="var-pill">Zucchini</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('zapallito')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 · PIMIENTO -->
+      <div class="cultivo-card r d2" data-categoria="hortaliza">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-pimiento.png" alt="Semillas de pimiento" loading="lazy">
+          <span class="cultivo-tag">Hortaliza</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Pimiento</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Yuksel · Origene · Custom</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Morrón</span>
+            <span class="var-pill">Picante</span>
+            <span class="var-pill">California</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('pimiento')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 · BERENJENA -->
+      <div class="cultivo-card r d3" data-categoria="hortaliza">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-berenjena.jpg" alt="Semillas de berenjena" loading="lazy">
+          <span class="cultivo-tag">Hortaliza</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Berenjena</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Yuksel · Westar</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Negratín</span>
+            <span class="var-pill">Redonda</span>
+            <span class="var-pill">Larga</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('berenjena')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 · CEBOLLA -->
+      <div class="cultivo-card r d4" data-categoria="allium">
+        <div class="cultivo-img">
+          <img src="assets/img/semillas/semillas-cebolla.jpg" alt="Semillas de cebolla" loading="lazy">
+          <span class="cultivo-tag">Bulbo</span>
+        </div>
+        <div class="cultivo-body">
+          <h3 class="cultivo-nombre">Cebolla</h3>
+          <p class="cultivo-marcas">Marcas: <strong>Fusari · Origene · Westar</strong></p>
+          <div class="cultivo-vars">
+            <span class="var-pill">Blanca</span>
+            <span class="var-pill">Colorada</span>
+            <span class="var-pill">Temprana</span>
+            <span class="var-pill">Tardía</span>
+          </div>
+          <div class="cultivo-cta">
+            <button class="btn-ver-variedades" onclick="openModal('cebolla')">
+              Ver variedades <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cultivos-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ═══════════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="cta-final-text r">
+      <h2>¿No encontrás<br>la variedad que <em>buscás?</em></h2>
+      <p>Consultanos — trabajamos con muchas más variedades y podemos conseguir lo que necesitás.</p>
+    </div>
+    <div class="cta-final-btns r d2">
+      <a href="https://wa.me/5492616613696?text=Hola,%20busco%20una%20variedad%20de%20semilla%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener" class="btn-amarillo">
+        <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER (igual en todas las páginas)
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/foot.png" alt="footer logo" style="padding-bottom: 20px;">
+        <p class="footer-brand-sub">Lavalle, Mendoza · Argentina · Est. 1992</p>
+        <p class="footer-brand-desc">Empresa familiar con más de 30 años brindando soluciones agrícolas de calidad al pequeño y mediano productor del norte mendocino.</p>
+         <div class="footer-emails">
+          <a href="#" class="email-link" data-u="info"        data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="ventas"      data-d="agroquimicosdario.com.ar">ventas@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="proveedores" data-d="agroquimicosdario.com.ar">proveedores@agroquimicosdario.com.ar</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <ul class="footer-col-links">
+          <li><a href="semillas.html" style="color:rgba(255,255,255,.75)">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Empresa</p>
+        <ul class="footer-col-links">
+          <li><a href="nosotros.html">Nuestra historia</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-mobile-screen fi-icon"></i>
+          <a href="https://wa.me/5492616613696">+54 9 261 661-3696</a>
+        </div>
+         <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope fi-icon"></i>
+          <a href="#" class="email-link" data-u="info" data-d="agroquimicosdario.com.ar">
+            info@agroquimicosdario.com.ar
+          </a>
+        </div> 
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot fi-icon"></i>
+          <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Lavalle, Mendoza<br>Argentina</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-regular fa-clock fi-icon"></i>
+          <span>Lun–Vie 8:00 a 18:00 hs</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Agroquímicos Darío — Todos los derechos reservados</span>
+      <span>Design by <a href="https://www.instagram.com/goodideaest/" target="_blank" rel="noopener">Good Ideas Studio</a></span>
+      <span>agroquimicosdario.com.ar</span>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MODALES DE VARIEDADES
+  ═══════════════════════════════════════════ -->
+
+  <!-- SANDÍA -->
+  <div class="modal-overlay" id="modal-sandia">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-sandia">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-sandia">Sandía</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('sandia')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-group-title">Diploide (con semilla)</p>
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/sandia-barriga.jpg" alt="Sandía Barriga" loading="lazy"></div>
+            <p class="var-card-name">Barriga</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/sandia-lavalle.jpg" alt="Sandía Lavalle" loading="lazy"></div>
+            <p class="var-card-name">Lavalle</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/sandia-yarden.jpg" alt="Sandía Yarden" loading="lazy"></div>
+            <p class="var-card-name">Yarden</p>
+          </div>
+        </div>
+        <p class="modal-group-title">Micro-semilla (sin semilla)</p>
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/sandia-caramella.jpg" alt="Sandía Caramella" loading="lazy"></div>
+            <p class="var-card-name">Caramella</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Sand%C3%ADa" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MELÓN -->
+  <div class="modal-overlay" id="modal-melon">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-melon">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-melon">Melón</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('melon')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/melon-imoji.jpg" alt="Melón Imoji" loading="lazy"></div>
+            <p class="var-card-name">Imoji</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/melon-river-dew.jpg" alt="Melón River Dew" loading="lazy"></div>
+            <p class="var-card-name">River Dew</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/melon-bola-de-oro.jpg" alt="Melón Bola de Oro" loading="lazy"></div>
+            <p class="var-card-name">Bola de Oro</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Mel%C3%B3n" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOMATE -->
+  <div class="modal-overlay" id="modal-tomate">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-tomate">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-tomate">Tomate</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('tomate')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/tomate-wayna.jpeg" alt="Tomate Wayna" loading="lazy"></div>
+            <p class="var-card-name">Wayna</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/tomate-lequi.jpeg" alt="Tomate Lequi" loading="lazy"></div>
+            <p class="var-card-name">Lequi</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Tomate" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZAPALLO -->
+  <div class="modal-overlay" id="modal-zapallo">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-zapallo">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-zapallo">Zapallo</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('zapallo')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/zapallo-butter-flash.jpg" alt="Zapallo Butter Flash" loading="lazy"></div>
+            <p class="var-card-name">Butter Flash</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/zapallo-viola.jpg" alt="Zapallo Viola" loading="lazy"></div>
+            <p class="var-card-name">Viola</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Zapallo" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZAPALLITO -->
+  <div class="modal-overlay" id="modal-zapallito">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-zapallito">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-zapallito">Zapallito</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('zapallito')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/zapallito-goldy.jpg" alt="Zapallito Goldy" loading="lazy"></div>
+            <p class="var-card-name">Goldy</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Zapallito" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIMIENTO -->
+  <div class="modal-overlay" id="modal-pimiento">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-pimiento">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-pimiento">Pimiento</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('pimiento')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/pimiento-cumpa.jpg" alt="Pimiento Cumpa" loading="lazy"></div>
+            <p class="var-card-name">Cumpa</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/pimiento-messina.jpg" alt="Pimiento Messina" loading="lazy"></div>
+            <p class="var-card-name">Messina</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/pimiento-roman.jpg" alt="Pimiento Roman" loading="lazy"></div>
+            <p class="var-card-name">Roman</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Pimiento" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERENJENA -->
+  <div class="modal-overlay" id="modal-berenjena">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-berenjena">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-berenjena">Berenjena</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('berenjena')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/berenjena-marti.jpg" alt="Berenjena Martí" loading="lazy"></div>
+            <p class="var-card-name">Martí</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/berenjena-negratin.jpeg" alt="Berenjena Negratín" loading="lazy"></div>
+            <p class="var-card-name">Negratín</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Berenjena" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEBOLLA -->
+  <div class="modal-overlay" id="modal-cebolla">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-cebolla">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-eyebrow">Variedades disponibles</span>
+          <h2 class="modal-title" id="modal-title-cebolla">Cebolla</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal('cebolla')" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-vars-grid">
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/cebolla-grano-de-oro.png" alt="Cebolla Grano de Oro" loading="lazy"></div>
+            <p class="var-card-name">Grano de Oro</p>
+          </div>
+          <div class="var-card">
+            <div class="var-card-img"><img src="assets/img/variedades/cebolla-val14.jpg" alt="Cebolla Val 14 INTA" loading="lazy"></div>
+            <p class="var-card-name">Val 14 INTA</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>¿Querés saber más sobre alguna variedad?</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20variedades%20de%20Cebolla" target="_blank" rel="noopener" class="modal-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="wa-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('solid', window.scrollY > 50);
+    });
+
+    /* ── Menú hamburguesa ── */
+    const hamburger    = document.getElementById('hamburger');
+    const mobileMenu   = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerIcon.classList.toggle('fa-bars');
+      hamburgerIcon.classList.toggle('fa-xmark');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerIcon.classList.add('fa-bars');
+        hamburgerIcon.classList.remove('fa-xmark');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    ;(()=>{
+      const io = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('on')), { threshold: 0.07 });
+      document.querySelectorAll('.r').forEach(el => io.observe(el));
+    })();
+
+    /* ── Dropdown navbar ── */
+    document.querySelectorAll('.nav-dropdown').forEach(item => {
+      const menu = item.querySelector('.nav-dropdown-menu');
+      let closeTimer;
+      item.addEventListener('mouseenter', () => { clearTimeout(closeTimer); menu.classList.add('open'); });
+      item.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+      menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+    });
+
+    /* ── Filtros de cultivos ── */
+    const filtros  = document.querySelectorAll('.filtro-btn');
+    const tarjetas = document.querySelectorAll('.cultivo-card');
+
+    filtros.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtros.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filtro = btn.dataset.filter;
+        tarjetas.forEach(card => {
+          card.classList.toggle('hidden', filtro !== 'todos' && card.dataset.categoria !== filtro);
+        });
+      });
+    });
+
+    /* ── Modales de variedades ── */
+    function openModal(id) {
+      const overlay = document.getElementById('modal-' + id);
+      if (!overlay) return;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';   // evita scroll de fondo
+    }
+
+    function closeModal(id) {
+      const overlay = document.getElementById('modal-' + id);
+      if (!overlay) return;
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // cerrar al hacer click en el overlay (fuera del modal)
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // cerrar con tecla Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

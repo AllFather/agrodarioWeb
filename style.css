@@ -1,0 +1,340 @@
+/* ============================================================
+   AGROQUÍMICOS DARÍO — style.css
+   Versión: 2.0
+   Para editar colores, modificá las variables en :root
+   ============================================================ */
+
+/* ─── VARIABLES DE MARCA ─── */
+:root {
+  --negro:   #080f07;
+  --tierra:  #0d1f0a;       /* fondo oscuro principal */
+  --azul:    #1a4fa0;       /* azul del logo */
+  --amarillo:#f5b800;       /* amarillo/dorado del logo */
+  --campo:   #2d7a1f;       /* verde oscuro del logo */
+  --hoja:    #4ca832;       /* verde claro del logo */
+  --crema:   #f4f8f3;       /* fondo claro */
+  --humo:    #eaf2e8;       /* fondo claro alternativo */
+  --texto:   #0a1809;       /* texto principal */
+  --gris:    #4a6644;       /* texto secundario */
+
+  /* tipografías */
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--crema);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+img { display:block; max-width:100%; }
+a { color:inherit; }
+
+/* ─── TIPOGRAFÍA UTILITARIA ─── */
+.eyebrow {
+  font-size:11px; letter-spacing:5px; text-transform:uppercase;
+  font-weight:600; color:var(--azul); display:block; margin-bottom:14px;
+}
+.eyebrow--light { color:var(--amarillo); }
+.eyebrow--green { color:var(--hoja); }
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.5vw, 50px);
+  font-weight:700; line-height:1.1; color:var(--tierra);
+}
+h2.section-title em { font-style:italic; color:var(--campo); }
+h2.section-title--light { color:#fff; }
+h2.section-title--light em { color:var(--amarillo); }
+
+/* ─── BOTONES ─── */
+.btn-wa {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#25d366; color:#fff;
+  padding:15px 30px; border-radius:50px;
+  font-size:15px; font-weight:600; text-decoration:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.18);
+  transition:transform .2s, filter .2s;
+  white-space:nowrap;
+}
+.btn-wa:hover { transform:translateY(-2px); filter:brightness(1.07); }
+
+.btn-outline {
+  display:inline-flex; align-items:center; gap:8px;
+  color:rgba(255,255,255,.8);
+  font-size:14px; font-weight:500; text-decoration:none;
+  padding-bottom:2px; border-bottom:1px solid rgba(255,255,255,.3);
+  transition:color .2s, border-color .2s;
+}
+.btn-outline:hover { color:#fff; border-color:#fff; }
+
+/* ─── NAVBAR ─── */
+#navbar {
+  position:fixed; inset:0 0 auto 0; z-index:200;
+  height:64px; padding:0 5%;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s, box-shadow .35s;
+}
+#navbar.solid {
+  background:rgba(244,248,243,.97);
+  box-shadow:0 1px 0 rgba(13,31,10,.12);
+  backdrop-filter:blur(10px);
+}
+
+.nav-logo { text-decoration:none; display:flex; flex-direction:column; line-height:1.1; }
+.nav-logo-name {
+  width: 120px;
+}
+#navbar.solid .nav-logo-name { color:var(--tierra); }
+.nav-logo-sub {
+  font-size:9.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:rgba(255,255,255,.45); font-weight:400; transition:color .3s;
+}
+#navbar.solid .nav-logo-sub { color:var(--campo); }
+
+.nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+.nav-links a {
+  font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase;
+  font-weight:500; text-decoration:none;
+  color:rgba(255,255,255,.65); transition:color .2s;
+}
+#navbar.solid .nav-links a { color:var(--campo); }
+.nav-links a:hover { color:#fff; }
+#navbar.solid .nav-links a:hover { color:var(--tierra); }
+.nav-links a.active { color:#fff; font-weight:600; }
+#navbar.solid .nav-links a.active { color:var(--tierra); }
+
+/* dropdown */
+.nav-dropdown { position:relative; }
+.nav-dropdown-menu {
+  display:none;
+  position:absolute; top:100%; left:50%; transform:translateX(-50%);
+  /* Sin margin-top: el padding-top crea un área invisible que conecta
+     el trigger con el menú y evita que se cierre al cruzar el gap */
+  margin-top:0;
+  padding-top:8px;
+  background:#fff;
+  border:1px solid rgba(45,122,31,.1);
+  border-radius:8px;
+  overflow:hidden;
+  min-width:200px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  list-style:none;
+  z-index:300;
+}
+/* .open lo agrega el JS — no usar :hover (causa el bug del gap) */
+.nav-dropdown-menu.open { display:block; }
+.nav-dropdown-menu li a {
+  display:block; padding:10px 20px;
+  font-size:13px; letter-spacing:.5px; text-transform:none;
+  color:var(--texto) !important; font-weight:400;
+  transition:background .15s, color .15s;
+}
+.nav-dropdown-menu li a:hover { background:var(--humo); color:var(--campo) !important; }
+/* flecha dropdown */
+.nav-dropdown > a::after {
+  content:' ▾'; font-size:9px; opacity:.6;
+}
+
+.nav-cta-btn {
+  display:flex; align-items:center; gap:8px;
+  background:#25d366; color:#fff !important;
+  padding:9px 18px; border-radius:50px;
+  font-size:12.5px !important; font-weight:600 !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+  transition:filter .2s, transform .2s !important;
+  letter-spacing:.5px !important; text-transform:none !important;
+}
+.nav-cta-btn i { font-size:14px; }
+.nav-cta-btn:hover { filter:brightness(1.07); transform:translateY(-1px); }
+
+/* menú hamburguesa (mobile) */
+.nav-hamburger {
+  display:none; align-items:center; justify-content:center;
+  cursor:pointer; background:none; border:none; padding:6px;
+}
+.nav-hamburger i {
+  font-size:22px; color:#fff; transition:color .3s;
+}
+#navbar.solid .nav-hamburger i { color:var(--tierra); }
+
+.nav-mobile-menu {
+  display:none;
+  position:fixed; inset:64px 0 0 0; z-index:199;
+  background:rgba(244,248,243,.98); backdrop-filter:blur(16px);
+  flex-direction:column; padding:32px 5%; gap:0;
+  overflow-y:auto;
+}
+.nav-mobile-menu.open { display:flex; }
+.nav-mobile-menu a {
+  display:block; padding:16px 0;
+  font-size:18px; font-weight:600; text-decoration:none;
+  color:var(--tierra); border-bottom:1px solid rgba(45,122,31,.1);
+  font-family: var(--font-display);
+}
+.nav-mobile-menu a:hover { color:var(--campo); }
+.nav-mobile-menu .mobile-wa {
+  margin-top:24px; text-align:center;
+  background:#25d366; color:#fff !important;
+  padding:16px; border-radius:50px; font-family: var(--font-body); font-size:16px;
+  border-bottom:none; box-shadow:0 2px 10px rgba(0,0,0,.15);
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.nav-mobile-menu .mobile-wa i { font-size:18px; }
+
+/* ─── FOOTER ─── */
+#footer {
+  background:var(--tierra);
+  padding:56px 5% 28px;
+}
+.footer-grid {
+  display:grid; grid-template-columns:1.8fr 1fr 1fr 1.2fr; gap:48px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  margin-bottom:24px;
+}
+.footer-brand-name {
+  font-family: var(--font-display); font-size:20px; font-weight:700;
+  color:var(--amarillo); display:block; margin-bottom:10px;
+}
+.footer-brand-sub {
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,.3); margin-bottom:16px;
+}
+.footer-brand-desc {
+  font-size:13px; color:rgba(255,255,255,.45); line-height:1.8; font-weight:300;
+  margin-bottom:20px;
+}
+.footer-emails { display:flex; flex-direction:column; gap:6px; }
+.footer-emails a {
+  font-size:12px; color:rgba(255,255,255,.35); text-decoration:none;
+  transition:color .2s;
+}
+.footer-emails a:hover { color:var(--amarillo); }
+
+.footer-col-title {
+  font-size:10px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--amarillo); opacity:.7; font-weight:600; margin-bottom:18px;
+}
+.footer-col-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-col-links a {
+  color:rgba(255,255,255,.45); font-size:13px; text-decoration:none; font-weight:300;
+  transition:color .2s;
+}
+.footer-col-links a:hover { color:#fff; }
+
+.footer-contact-item {
+  display:flex; gap:10px; align-items:flex-start; margin-bottom:12px;
+}
+.footer-contact-item .fi { font-size:15px; margin-top:1px; }
+.footer-contact-item span, .footer-contact-item a {
+  font-size:13px; color:rgba(255,255,255,.45); text-decoration:none; font-weight:300; line-height:1.5;
+}
+.footer-contact-item a:hover { color:#fff; }
+
+.footer-bottom {
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+  font-size:11px; color:rgba(255,255,255,.2);
+}
+
+/* ─── BOTÓN FLOTANTE WHATSAPP ─── */
+.wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  width:56px; height:56px;
+  background:#25d366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.22);
+  transition:transform .2s, filter .2s;
+}
+.wa-float i { font-size:28px; color:#fff; }
+.wa-float:hover { transform:scale(1.08); filter:brightness(1.07); }
+
+/* ─── SCROLL REVEAL ─── */
+.r { opacity:0; transform:translateY(32px); transition:opacity .75s ease, transform .75s ease; }
+.r.d1 { transition-delay:.1s; }
+.r.d2 { transition-delay:.2s; }
+.r.d3 { transition-delay:.3s; }
+.r.d4 { transition-delay:.4s; }
+.r.on { opacity:1; transform:none; }
+
+/* ─── HERO DE PÁGINA INTERIOR (rubros, nosotros) ─── */
+.page-hero {
+  min-height:340px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:120px 6% 64px;
+  position:relative; overflow:hidden;
+}
+.page-hero-bg {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+}
+.page-hero-bg::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(160deg,rgba(8,15,7,.85) 0%,rgba(13,31,10,.65) 100%);
+}
+.page-hero-content { position:relative; z-index:1; }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size:clamp(40px,5vw,72px); font-weight:900;
+  color:#fff; line-height:1; letter-spacing:-1.5px;
+  margin-bottom:12px;
+}
+.page-hero h1 em { font-style:italic; color:var(--amarillo); font-weight:300; }
+.page-hero p {
+  font-size:16px; color:rgba(255,255,255,.6); font-weight:300; max-width:480px; line-height:1.6;
+}
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb {
+  display:flex; align-items:center; gap:8px;
+  font-size:12px; color:rgba(255,255,255,.4); margin-bottom:24px;
+}
+.breadcrumb a { color:rgba(255,255,255,.4); text-decoration:none; transition:color .2s; }
+.breadcrumb a:hover { color:rgba(255,255,255,.8); }
+.breadcrumb span { color:var(--amarillo); }
+
+
+/* ─── FONT AWESOME — helpers globales ─── */
+
+/* Íconos en .pq-icon (sección "Por qué elegirnos") */
+.pq-icon {
+  display:flex; align-items:center; justify-content:center;
+}
+.pq-icon i { font-size:18px; color:var(--amarillo); }
+
+/* Íconos en .canal-icon (sección Contacto) */
+.canal-icon {
+  display:flex; align-items:center; justify-content:center;
+}
+.canal-icon i { font-size:20px; color:#fff; }
+
+/* Flecha en rubro-arrow-btn */
+.rubro-arrow-btn i { font-size:15px; }
+
+/* Chevron en canal-arrow */
+.canal-arrow { font-size:unset; }
+.canal-arrow i { font-size:12px; }
+
+/* Íconos del footer contacto */
+.fi-icon {
+  font-size:14px; color:rgba(255,255,255,.45);
+  margin-top:2px; flex-shrink:0; width:16px; text-align:center;
+}
+
+/* Versión: 2.0 — Font Awesome */
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px) {
+  .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; align-items:center; }
+}
+@media(max-width:600px) {
+  .footer-grid { grid-template-columns:1fr; }
+  .wa-float { bottom:20px; right:20px; }
+}

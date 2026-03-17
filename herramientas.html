@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Herramientas y Equipos — Agroquímicos Darío | Lavalle, Mendoza</title>
+  <meta name="description" content="Herramientas eléctricas, manuales, ropa de trabajo, riego e implementos agrícolas. Marcas Einhell, Oleo-Mac, Motomel, ESAB y más. Lavalle, Mendoza.">
+  <meta name="keywords" content="herramientas agricolas mendoza, implementos agricolas, ropa trabajo campo, sistema riego, einhell, oleo-mac, motomel, lavalle mendoza">
+  <link rel="canonical" href="https://agroquimicosdario.com.ar/herramientas.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Herramientas y Equipos — Agroquímicos Darío">
+  <meta property="og:description" content="Todo lo que necesitás para trabajar en el campo. Herramientas, ropa, riego e implementos agrícolas con las mejores marcas.">
+  <meta property="og:url" content="https://agroquimicosdario.com.ar/herramientas.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .page-hero {
+      min-height: 420px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 120px 6% 64px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background: url('assets/img/herramientas-hero.jpg') center/cover no-repeat;
+    }
+    .page-hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(8,15,7,.88) 0%, rgba(13,31,10,.65) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 900; line-height: .95;
+      color: #fff; letter-spacing: -2px; margin-bottom: 16px;
+    }
+    .page-hero h1 em { font-style: italic; color: #f5b800; font-weight: 300; }
+    .page-hero-desc {
+      font-size: 17px; color: rgba(255,255,255,.6);
+      font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 36px;
+    }
+    .page-hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb .sep { color: rgba(255,255,255,.2); }
+    .breadcrumb .current { color: #f5b800; font-weight: 500; }
+
+    /* ═══════════════════════════════════════
+       INTRO + MARCAS
+    ═══════════════════════════════════════ */
+    #intro {
+      padding: 72px 6%;
+      background: var(--crema);
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .intro-text .section-lead {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--tierra); margin-bottom: 20px;
+    }
+    .intro-text .section-lead em { font-style: italic; color: var(--campo); }
+    .intro-text p {
+      font-size: 15px; color: var(--gris);
+      line-height: 1.85; font-weight: 300; margin-bottom: 14px;
+    }
+    .intro-text p:last-of-type { margin-bottom: 0; }
+
+    .intro-marcas h3 {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--campo); font-weight: 600; margin-bottom: 24px;
+    }
+    .marcas-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    }
+    .marca-card {
+      background: #fff;
+      border: 1px solid rgba(45,122,31,.1);
+      border-radius: 8px; padding: 18px 12px;
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 3/2;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .marca-card:hover {
+      border-color: rgba(45,122,31,.3);
+      box-shadow: 0 4px 16px rgba(45,122,31,.08);
+    }
+    .marca-card span {
+      font-family: 'Fraunces', serif;
+      font-size: 13px; font-weight: 700;
+      color: var(--campo); letter-spacing: .5px; text-align: center;
+    }
+    .marca-card img { max-width: 80%; max-height: 36px; object-fit: contain; }
+
+    /* ═══════════════════════════════════════
+       CATEGORÍAS
+    ═══════════════════════════════════════ */
+    #categorias {
+      padding: 80px 6% 100px;
+      background: var(--humo);
+    }
+    .cats-header { margin-bottom: 56px; }
+    .cats-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; color: var(--tierra); line-height: 1.1;
+    }
+    .cats-header h2 em { font-style: italic; color: var(--campo); }
+    .cats-header p {
+      font-size: 15px; color: var(--gris); font-weight: 300;
+      max-width: 560px; line-height: 1.7; margin-top: 12px;
+    }
+
+    /* grilla 2x2 para las 4 categorías */
+    .cats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .cat-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(45,122,31,.08);
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+      display: grid; grid-template-columns: 1fr 1fr;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+
+    .cat-img {
+      position: relative; overflow: hidden; min-height: 240px;
+    }
+    .cat-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .5s ease; filter: sepia(10%) brightness(.92);
+    }
+    .cat-card:hover .cat-img img { transform: scale(1.05); }
+
+    .cat-body {
+      padding: 28px 24px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .cat-icon {
+      width: 44px; height: 44px;
+      background: rgba(45,122,31,.08); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .cat-icon i { font-size: 20px; color: var(--campo); }
+    .cat-titulo {
+      font-family: 'Fraunces', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--tierra); margin-bottom: 10px;
+    }
+    .cat-desc {
+      font-size: 13px; color: var(--gris);
+      line-height: 1.7; font-weight: 300; margin-bottom: 20px; flex: 1;
+    }
+    .cat-ejemplos {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+    }
+    .ej-pill {
+      background: var(--humo);
+      border: 1px solid rgba(45,122,31,.15);
+      color: var(--gris);
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 50px;
+    }
+    .cat-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid rgba(45,122,31,.08);
+    }
+    .cat-cta a {
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--campo);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap .2s;
+    }
+    .cat-cta a:hover { gap: 10px; }
+    .cat-cta .wa-mini {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #25d366; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      transition: transform .2s, filter .2s;
+    }
+    .cat-cta .wa-mini i { font-size: 15px; color: #fff; }
+    .cat-cta .wa-mini:hover { transform: scale(1.08); filter: brightness(1.07); }
+
+    /* ═══════════════════════════════════════
+       LÍNEA HOGAR + ENERGÍA
+    ═══════════════════════════════════════ */
+    #extras {
+      padding: 80px 6%;
+      background: var(--crema);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .extra-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(45,122,31,.08);
+      padding: 40px;
+      display: flex; flex-direction: column; gap: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .extra-icon {
+      width: 52px; height: 52px;
+      background: rgba(45,122,31,.08); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .extra-icon i { font-size: 24px; color: var(--campo); }
+    .extra-titulo {
+      font-family: 'Fraunces', serif;
+      font-size: 22px; font-weight: 700; color: var(--tierra);
+    }
+    .extra-desc {
+      font-size: 14px; color: var(--gris);
+      line-height: 1.8; font-weight: 300;
+    }
+    .extra-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--campo); text-decoration: none;
+      font-size: 13px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; margin-top: 8px;
+      transition: gap .2s;
+    }
+    .extra-cta:hover { gap: 12px; }
+
+    /* ═══════════════════════════════════════
+       IMPLEMENTOS — banda oscura
+    ═══════════════════════════════════════ */
+    #implementos {
+      padding: 80px 6%;
+      background: var(--tierra);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #implementos::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .impl-content { position: relative; z-index: 1; }
+    .impl-content .eyebrow { color: var(--amarillo); margin-bottom: 12px; display: block; }
+    .impl-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 20px;
+    }
+    .impl-title em { font-style: italic; color: var(--amarillo); }
+    .impl-text {
+      font-size: 15px; color: rgba(255,255,255,.6);
+      line-height: 1.85; font-weight: 300; margin-bottom: 32px;
+    }
+    .impl-items {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .impl-item {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 14px; color: rgba(255,255,255,.75);
+    }
+    .impl-item i { font-size: 16px; color: var(--amarillo); flex-shrink: 0; }
+
+    .impl-cta { position: relative; z-index: 1; }
+    .impl-cta-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px; padding: 40px;
+      display: flex; flex-direction: column; gap: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .impl-cta-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px; color: #fff; font-weight: 700; line-height: 1.2;
+    }
+    .impl-cta-card p {
+      font-size: 14px; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.7;
+    }
+    .btn-wa-full {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #25d366; color: #fff;
+      padding: 16px; border-radius: 50px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 3px 12px rgba(0,0,0,.2);
+      transition: filter .2s, transform .2s;
+    }
+    .btn-wa-full:hover { filter: brightness(1.07); transform: translateY(-2px); }
+    .btn-wa-full i { font-size: 18px; }
+    .impl-visit {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,.5); font-size: 13px; font-weight: 300;
+      text-decoration: none; transition: color .2s;
+    }
+    .impl-visit:hover { color: rgba(255,255,255,.85); }
+    .impl-visit i { font-size: 14px; color: var(--amarillo); }
+
+    /* ═══════════════════════════════════════
+       CTA FINAL
+    ═══════════════════════════════════════ */
+    #cta-final {
+      background: var(--campo);
+      padding: 80px 6%;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+    }
+    .cta-final-text h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 10px;
+    }
+    .cta-final-text h2 em { font-style: italic; color: #f5b800; }
+    .cta-final-text p { font-size: 15px; color: rgba(255,255,255,.6); font-weight: 300; }
+    .cta-final-btns {
+      display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+    }
+    .btn-amarillo {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #f5b800; color: var(--tierra);
+      padding: 15px 28px; border-radius: 50px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      letter-spacing: .5px; white-space: nowrap;
+      transition: filter .2s, transform .2s;
+    }
+    .btn-amarillo:hover { filter: brightness(1.08); transform: translateY(-2px); }
+    .btn-link-blanco {
+      font-size: 13px; color: rgba(255,255,255,.6); text-decoration: none;
+      display: flex; align-items: center; gap: 6px; transition: color .2s;
+    }
+    .btn-link-blanco:hover { color: #fff; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media(max-width: 1024px) {
+      .cats-grid { grid-template-columns: 1fr; }
+      #implementos { grid-template-columns: 1fr; gap: 48px; }
+      #extras { grid-template-columns: 1fr; }
+    }
+    @media(max-width: 900px) {
+      #intro { grid-template-columns: 1fr; gap: 48px; }
+      .cat-card { grid-template-columns: 1fr; }
+      .cat-img { min-height: 200px; }
+      #cta-final { grid-template-columns: 1fr; }
+      .cta-final-btns { align-items: flex-start; }
+    }
+    @media(max-width: 640px) {
+      .marcas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/42750a99cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.png" alt="Agroquímicos Darío" class="nav-logo-name">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" class="active">Productos</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html" style="color:var(--campo)!important;font-weight:600">● Herramientas</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li>
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+    </button>
+  </nav>
+
+  <!-- Menú mobile -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="semillas.html">Semillas</a>
+    <a href="nutricion.html">Nutrición Vegetal</a>
+    <a href="proteccion.html">Protección Vegetal</a>
+    <a href="herramientas.html" style="color:var(--campo)">Herramientas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="index.html#marcas">Marcas</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="mobile-wa">
+      <i class="fa-brands fa-whatsapp"></i> Escribinos por WhatsApp
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span class="sep">/</span>
+        <span class="current">Herramientas</span>
+      </nav>
+      <h1>Todo para<br>trabajar el <em>campo</em></h1>
+      <p class="page-hero-desc">
+        Herramientas, equipos, ropa de trabajo y sistemas de riego con las mejores marcas del mercado. Trabajá cómodo, seguro y eficiente.
+      </p>
+      <div class="page-hero-actions">
+        <a href="#categorias" class="btn-wa">
+          <i class="fa-solid fa-wrench"></i> Ver categorías
+        </a>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20herramientas%20y%20equipos" target="_blank" rel="noopener" class="btn-outline">
+          Consultar disponibilidad <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO + MARCAS
+  ═══════════════════════════════════════════ -->
+  <section id="intro">
+    <div class="intro-text r">
+      <h2 class="section-lead">
+        Trabajá de forma<br>cómoda y <em>segura</em>
+      </h2>
+      <p>
+        En Agroquímicos Darío encontrás todo lo necesario para trabajar el campo con eficiencia. Desde herramientas eléctricas y manuales hasta sistemas de riego, ropa de trabajo e implementos agrícolas.
+      </p>
+      <p>
+        Trabajamos con marcas líderes para garantizarte calidad y durabilidad en cada producto. Visitá nuestro local en Lavalle o consultanos por WhatsApp para ver disponibilidad y precios.
+      </p>
+    </div>
+    <div class="intro-marcas r d2">
+      <h3>Marcas con las que trabajamos</h3>
+      <div class="marcas-grid">
+        <!-- Reemplazá <span> por <img> cuando tengas los logos -->
+        <div class="marca-card"><span>EINHELL</span></div>
+        <div class="marca-card"><span>OLEO-MAC</span></div>
+        <div class="marca-card"><span>MOTOMEL</span></div>
+        <div class="marca-card"><span>ESAB</span></div>
+        <div class="marca-card"><span>ENFER</span></div>
+        <div class="marca-card"><span>FEMA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CATEGORÍAS
+  ═══════════════════════════════════════════ -->
+  <section id="categorias">
+    <div class="cats-header r">
+      <span class="eyebrow eyebrow--green">Nuestras categorías</span>
+      <h2>Lo que encontrás<br>en nuestro <em>local</em></h2>
+      <p>Stock permanente con lo que necesitás para el día a día del campo.</p>
+    </div>
+
+    <div class="cats-grid">
+
+      <!-- 01 · ELÉCTRICAS Y MANUALES -->
+      <div class="cat-card r d1">
+        <div class="cat-img">
+          <img src="assets/img/herramientas-electricas.jpg" alt="Herramientas eléctricas y manuales" loading="lazy">
+        </div>
+        <div class="cat-body">
+          <div>
+            <div class="cat-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+            <h3 class="cat-titulo">Eléctricas y manuales</h3>
+            <p class="cat-desc">
+              Amoladora, taladros, sierras, martillos, destornilladores y todo lo necesario para el mantenimiento y construcción en el campo.
+            </p>
+            <div class="cat-ejemplos">
+              <span class="ej-pill">Amoladoras</span>
+              <span class="ej-pill">Taladros</span>
+              <span class="ej-pill">Sierras</span>
+              <span class="ej-pill">Soldadoras</span>
+              <span class="ej-pill">Herramientas de mano</span>
+            </div>
+          </div>
+          <div class="cat-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20herramientas%20el%C3%A9ctricas%20y%20manuales" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20herramientas%20el%C3%A9ctricas%20y%20manuales" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 · JARDINERÍA Y PODA -->
+      <div class="cat-card r d2">
+        <div class="cat-img">
+          <img src="assets/img/herramientas-jardineria.jpg" alt="Herramientas de jardinería y poda" loading="lazy">
+        </div>
+        <div class="cat-body">
+          <div>
+            <div class="cat-icon"><i class="fa-solid fa-scissors"></i></div>
+            <h3 class="cat-titulo">Jardinería y poda</h3>
+            <p class="cat-desc">
+              Motosierras, podadoras, bordeadoras y equipos Oleo-Mac para el mantenimiento de viñas, frutales y espacios verdes del campo.
+            </p>
+            <div class="cat-ejemplos">
+              <span class="ej-pill">Motosierras</span>
+              <span class="ej-pill">Podadoras</span>
+              <span class="ej-pill">Bordeadoras</span>
+              <span class="ej-pill">Tijeras de poda</span>
+              <span class="ej-pill">Desmalezadoras</span>
+            </div>
+          </div>
+          <div class="cat-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20herramientas%20de%20jardiner%C3%ADa%20y%20poda" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20herramientas%20de%20jardiner%C3%ADa%20y%20poda" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 · MAQUINARIA AGRÍCOLA -->
+      <div class="cat-card r d1">
+        <div class="cat-img">
+          <img src="assets/img/herramientas-maquinaria.jpg" alt="Maquinaria agrícola y repuestos" loading="lazy">
+        </div>
+        <div class="cat-body">
+          <div>
+            <div class="cat-icon"><i class="fa-solid fa-tractor"></i></div>
+            <h3 class="cat-titulo">Maquinaria agrícola</h3>
+            <p class="cat-desc">
+              Tractores, implementos y repuestos para el trabajo pesado del campo. Discos de arado, cubiertas y todo lo necesario para mantener tu maquinaria operativa.
+            </p>
+            <div class="cat-ejemplos">
+              <span class="ej-pill">Tractores</span>
+              <span class="ej-pill">Discos de arado</span>
+              <span class="ej-pill">Cubiertas de tractor</span>
+              <span class="ej-pill">Implementos</span>
+              <span class="ej-pill">Repuestos</span>
+            </div>
+          </div>
+          <div class="cat-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20maquinaria%20agr%C3%ADcola" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20maquinaria%20agr%C3%ADcola" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 · RIEGO -->
+      <div class="cat-card r d2">
+        <div class="cat-img">
+          <img src="assets/img/herramientas-riego.jpg" alt="Sistemas de riego agrícola" loading="lazy">
+        </div>
+        <div class="cat-body">
+          <div>
+            <div class="cat-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h3 class="cat-titulo">Sistemas de riego</h3>
+            <p class="cat-desc">
+              Mangueras, goteros, aspersores, bombas y accesorios para armar o ampliar tu sistema de riego. Soluciones para pequeñas y medianas superficies.
+            </p>
+            <div class="cat-ejemplos">
+              <span class="ej-pill">Cintas de goteo</span>
+              <span class="ej-pill">Aspersores</span>
+              <span class="ej-pill">Bombas</span>
+              <span class="ej-pill">Mangueras</span>
+              <span class="ej-pill">Accesorios</span>
+            </div>
+          </div>
+          <div class="cat-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20sistemas%20de%20riego" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20sistemas%20de%20riego" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EXTRAS: LÍNEA HOGAR + ENERGÍA SOLAR
+  ═══════════════════════════════════════════ -->
+  <section id="extras">
+    <div class="extra-card r d1">
+      <div class="extra-icon"><i class="fa-solid fa-house"></i></div>
+      <h3 class="extra-titulo">Línea Hogar</h3>
+      <p class="extra-desc">
+        En nuestro local también encontrás accesorios y equipos para tu casa. Herramientas domésticas, artículos de mantenimiento y más para que no tengas que buscar en otro lado.
+      </p>
+      <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20la%20l%C3%ADnea%20hogar" target="_blank" rel="noopener" class="extra-cta">
+        Ver disponibilidad <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="extra-card r d2">
+      <div class="extra-icon"><i class="fa-solid fa-solar-panel"></i></div>
+      <h3 class="extra-titulo">Energía Renovable</h3>
+      <p class="extra-desc">
+        Línea de termotanques solares FIASA. Una inversión que se paga sola reduciendo el consumo de gas o electricidad. Consultanos por instalación y disponibilidad en zona.
+      </p>
+      <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20termotanques%20solares%20FIASA" target="_blank" rel="noopener" class="extra-cta">
+        Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       IMPLEMENTOS AGRÍCOLAS
+  ═══════════════════════════════════════════ -->
+  <section id="implementos">
+    <div class="impl-content r">
+      <span class="eyebrow">Implementos y maquinaria</span>
+      <h2 class="impl-title">Trabajá con el<br>equipo <em>correcto</em></h2>
+      <p class="impl-text">
+        Contamos con implementos y maquinaria agrícola para las distintas etapas de la producción. Consultanos por disponibilidad y te asesoramos según el tipo y tamaño de tu explotación.
+      </p>
+      <div class="impl-items">
+        <div class="impl-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Pulverizadoras manuales y de mochila</span>
+        </div>
+        <div class="impl-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Equipos Jacto y Agrale</span>
+        </div>
+        <div class="impl-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Implementos para labranza y siembra</span>
+        </div>
+        <div class="impl-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Accesorios y repuestos</span>
+        </div>
+        <div class="impl-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Entrega en zona norte mendocina</span>
+        </div>
+      </div>
+    </div>
+    <div class="impl-cta r d2">
+      <div class="impl-cta-card">
+        <h3>¿Qué necesitás<br>para tu campo?</h3>
+        <p>Consultanos y te armamos un presupuesto sin compromiso.</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20implementos%20agr%C3%ADcolas" target="_blank" rel="noopener" class="btn-wa-full">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+        <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" class="impl-visit">
+          <i class="fa-solid fa-location-dot"></i>
+          Visitá nuestro local en Lavalle, Mendoza
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ═══════════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="cta-final-text r">
+      <h2>¿No encontrás<br>lo que <em>buscás?</em></h2>
+      <p>Consultanos — si no lo tenemos en stock lo conseguimos para vos.</p>
+    </div>
+    <div class="cta-final-btns r d2">
+      <a href="https://wa.me/5492616613696?text=Hola,%20busco%20una%20herramienta%20o%20equipo%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener" class="btn-amarillo">
+        <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/foot.png" alt="footer logo" style="padding-bottom: 20px;">
+        <p class="footer-brand-sub">Lavalle, Mendoza · Argentina · Est. 1992</p>
+        <p class="footer-brand-desc">Empresa familiar con más de 30 años brindando soluciones agrícolas de calidad al pequeño y mediano productor del norte mendocino.</p>
+        <div class="footer-emails">
+          <a href="#" class="email-link" data-u="info"        data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="ventas"      data-d="agroquimicosdario.com.ar">ventas@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="proveedores" data-d="agroquimicosdario.com.ar">proveedores@agroquimicosdario.com.ar</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <ul class="footer-col-links">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html" style="color:rgba(255,255,255,.75)">Herramientas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Empresa</p>
+        <ul class="footer-col-links">
+          <li><a href="nosotros.html">Nuestra historia</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-mobile-screen fi-icon"></i>
+          <a href="https://wa.me/5492616613696">+54 9 261 661-3696</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope fi-icon"></i>
+          <a href="#" class="email-link" data-u="info" data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot fi-icon"></i>
+          <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Lavalle, Mendoza<br>Argentina</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-regular fa-clock fi-icon"></i>
+          <span>Lun–Vie 8:00 a 18:00 hs</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Agroquímicos Darío — Todos los derechos reservados</span>
+      <span>Design by <a href="https://www.instagram.com/goodideaest/" target="_blank" rel="noopener">Good Ideas Studio</a></span>
+      <span>agroquimicosdario.com.ar</span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="wa-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('solid', window.scrollY > 50);
+    });
+
+    /* ── Menú hamburguesa ── */
+    const hamburger     = document.getElementById('hamburger');
+    const mobileMenu    = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerIcon.classList.toggle('fa-bars');
+      hamburgerIcon.classList.toggle('fa-xmark');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerIcon.classList.add('fa-bars');
+        hamburgerIcon.classList.remove('fa-xmark');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    ;(()=>{
+      const io = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('on')), { threshold: 0.07 });
+      document.querySelectorAll('.r').forEach(el => io.observe(el));
+    })();
+
+    /* ── Dropdown navbar (con delay para evitar cierre accidental) ── */
+    document.querySelectorAll('.nav-dropdown').forEach(item => {
+      const menu = item.querySelector('.nav-dropdown-menu');
+      let closeTimer;
+      item.addEventListener('mouseenter', () => { clearTimeout(closeTimer); menu.classList.add('open'); });
+      item.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+      menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+    });
+
+    /* ── Emails: ensamblar href para evitar ofuscación del servidor ── */
+    document.querySelectorAll('.email-link').forEach(el => {
+      const addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+    });
+  </script>
+</body>
+</html>

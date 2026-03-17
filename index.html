@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Agroquímicos Darío — Semillas, Nutrición y Protección Vegetal | Lavalle, Mendoza</title>
+  <meta name="description" content="Empresa familiar con más de 30 años en Lavalle, Mendoza. Comercializamos semillas, nutrición vegetal, protección vegetal y herramientas para el productor agropecuario del norte mendocino.">
+  <meta name="keywords" content="agroquimicos, mendoza, lavalle, semillas, nutricion vegetal, proteccion vegetal, herbicidas, fertilizantes, herramientas agricolas">
+  <meta name="author" content="Agroquímicos Darío">
+  <link rel="canonical" href="https://agroquimicosdario.com.ar/">
+
+  <!-- Open Graph (redes sociales) -->
+  <meta property="og:title" content="Agroquímicos Darío — Lavalle, Mendoza">
+  <meta property="og:description" content="30 años siendo el proveedor de confianza del norte mendocino. Semillas, nutrición vegetal, protección y herramientas.">
+  <meta property="og:url" content="https://agroquimicosdario.com.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Favicon (reemplazar con el real) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS específico de esta página -->
+  <style>
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      min-height:100vh;
+      display:grid; grid-template-rows:1fr auto;
+      position:relative; overflow:hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:
+        linear-gradient(165deg, rgba(8,15,7,.85) 0%, rgba(13,31,10,.5) 45%, rgba(8,15,7,.8) 100%),
+        url('assets/img/portada.png') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity:.35;
+    }
+    .hero-inner {
+      position:relative; z-index:1;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:120px 6% 80px;
+      align-self:stretch;
+    }
+    .hero-trust {
+      display:flex; align-items:center; gap:12px; margin-bottom:36px;
+    }
+    .trust-pill {
+      background:rgba(245,184,0,.15); border:1px solid rgba(245,184,0,.4);
+      color:#f5b800; font-size:11px; letter-spacing:3px;
+      text-transform:uppercase; font-weight:600; padding:6px 16px; border-radius:50px;
+    }
+    .trust-sep { width:1px; height:16px; background:rgba(255,255,255,.2); }
+    .trust-text { font-size:12px; color:rgba(255,255,255,.45); letter-spacing:1px; }
+
+    .hero-h1 {
+      font-family:'Fraunces',serif;
+      font-size:clamp(52px,7.5vw,108px);
+      font-weight:900; line-height:.95; letter-spacing:-2px;
+      color:#fff; margin-bottom:32px;
+    }
+    .hero-h1 em { font-style:italic; color:#f5b800; font-weight:300; }
+
+    .hero-desc {
+      font-size:clamp(15px,1.3vw,18px); color:rgba(255,255,255,.6);
+      line-height:1.75; max-width:520px; font-weight:300; margin-bottom:48px;
+    }
+    .hero-actions { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+
+    /* barra inferior hero */
+    .hero-bar {
+      position:relative; z-index:1;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:grid; grid-template-columns:repeat(3,1fr);
+    }
+    .hbar-item {
+      padding:28px 5%; border-right:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; gap:16px;
+    }
+    .hbar-item:last-child { border-right:none; }
+    .hbar-num {
+      font-family:'Fraunces',serif; font-size:44px; font-weight:900;
+      color:#f5b800; line-height:1;
+    }
+    .hbar-label { font-size:11px; color:rgba(255,255,255,.45); letter-spacing:2px; text-transform:uppercase; line-height:1.6; }
+
+    /* ═══════════════════════════════════════
+       POR QUÉ ELEGIRNOS
+    ═══════════════════════════════════════ */
+    #por-que {
+      background:var(--tierra);
+      padding:72px 6%;
+      display:grid; grid-template-columns:1fr 3fr; gap:64px; align-items:center;
+    }
+    .pq-title { font-family:'Fraunces',serif; font-size:28px; font-weight:700; color:#fff; line-height:1.2; }
+    .pq-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+    .pq-item { display:flex; flex-direction:column; gap:10px; }
+    .pq-icon {
+      width:44px; height:44px;
+      background:rgba(245,184,0,.12); border:1px solid rgba(245,184,0,.25);
+      border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px;
+    }
+    .pq-item h4 { font-size:15px; font-weight:600; color:#fff; }
+    .pq-item p  { font-size:13px; color:rgba(255,255,255,.45); line-height:1.7; font-weight:300; }
+
+    /* ═══════════════════════════════════════
+       AUDIENCIAS
+    ═══════════════════════════════════════ */
+    #audiencias { padding:100px 6%; background:var(--crema); }
+    .aud-header { margin-bottom:56px; }
+    .aud-title {
+      font-family:'Fraunces',serif; font-size:clamp(32px,4vw,52px);
+      font-weight:700; color:var(--tierra); line-height:1.15; max-width:520px;
+    }
+    .aud-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+    .aud-card { position:relative; overflow:hidden; min-height:440px; cursor:pointer; }
+    .aud-card img {
+      width:100%; height:100%; object-fit:cover; display:block;
+      transition:transform .6s ease;
+      filter:sepia(20%) brightness(.65);
+    }
+    .aud-card:hover img { transform:scale(1.04); filter:sepia(5%) brightness(.75); }
+    .aud-over {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(8,15,7,.9) 0%, rgba(8,15,7,.1) 60%);
+    }
+    .aud-content { position:absolute; bottom:0; left:0; right:0; padding:40px; display:flex; flex-direction:column; gap:12px; }
+    .aud-tag {
+      display:inline-block; width:fit-content;
+      background:rgba(245,184,0,.2); border:1px solid rgba(245,184,0,.4);
+      color:#f5b800; font-size:10px; letter-spacing:3px;
+      text-transform:uppercase; font-weight:600; padding:5px 14px; border-radius:50px;
+    }
+    .aud-name { font-family:'Fraunces',serif; font-size:32px; font-weight:700; color:#fff; line-height:1.1; }
+    .aud-desc { font-size:14px; color:rgba(255,255,255,.6); line-height:1.7; font-weight:300; max-width:360px; }
+    .aud-cta {
+      display:inline-flex; align-items:center; gap:8px; color:#f5b800;
+      font-size:13px; font-weight:600; text-decoration:none; letter-spacing:1px; text-transform:uppercase;
+      margin-top:8px; padding-bottom:2px; border-bottom:1px solid rgba(245,184,0,.3); width:fit-content;
+      transition:gap .2s, border-color .2s;
+    }
+    .aud-cta:hover { gap:14px; border-color:#f5b800; }
+
+    /* ═══════════════════════════════════════
+       RUBROS
+    ═══════════════════════════════════════ */
+    #rubros { padding:100px 6%; background:var(--humo); }
+    .rubros-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
+    .rh-title { font-family:'Fraunces',serif; font-size:clamp(30px,3.5vw,46px); font-weight:700; color:var(--tierra); line-height:1.1; }
+    .rh-sub { font-size:13px; color:var(--gris); max-width:320px; text-align:right; line-height:1.7; font-weight:300; }
+
+    .rubros-list { display:flex; flex-direction:column; gap:2px; }
+    .rubro-row {
+      display:grid; grid-template-columns:80px 1fr auto;
+      align-items:center; gap:32px;
+      padding:28px 32px; background:#fff;
+      border:1px solid rgba(45,122,31,.1); border-radius:4px;
+      cursor:pointer; transition:background .2s, transform .2s, box-shadow .2s;
+      text-decoration:none;
+    }
+    .rubro-row:hover { background:var(--crema); transform:translateX(6px); box-shadow:0 4px 24px rgba(45,122,31,.1); }
+    .rubro-n { font-family:'Fraunces',serif; font-size:44px; font-weight:900; color:rgba(45,122,31,.12); line-height:1; }
+    .rubro-info { display:flex; flex-direction:column; gap:4px; }
+    .rubro-info strong { font-size:19px; font-weight:600; color:var(--tierra); font-family:'Fraunces',serif; }
+    .rubro-info span   { font-size:13px; color:var(--gris); font-weight:300; }
+    .rubro-arrow-btn {
+      width:44px; height:44px; border:1.5px solid rgba(45,122,31,.2);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      color:var(--campo); font-size:18px; transition:background .2s, border-color .2s;
+    }
+    .rubro-row:hover .rubro-arrow-btn { background:var(--campo); border-color:var(--campo); color:#fff; }
+
+    /* ═══════════════════════════════════════
+       MARCAS
+    ═══════════════════════════════════════ */
+    #marcas {
+      padding:64px 6%; background:var(--humo);
+      display:flex; align-items:center; gap:48px;
+      border-top:1px solid rgba(45,122,31,.08);
+    }
+    .marcas-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--campo); font-weight:600; white-space:nowrap; flex-shrink:0; }
+    .marcas-sep   { width:1px; height:28px; background:rgba(45,122,31,.25); flex-shrink:0; }
+    .marcas-scroll { overflow:hidden; flex:1; position:relative; }
+    .marcas-scroll::before,
+    .marcas-scroll::after {
+      content:''; position:absolute; top:0; bottom:0; width:60px; z-index:1; pointer-events:none;
+    }
+    .marcas-scroll::before { left:0; background:linear-gradient(to right,var(--humo),transparent); }
+    .marcas-scroll::after  { right:0; background:linear-gradient(to left,var(--humo),transparent); }
+    .marcas-track {
+      display:flex; gap:40px; align-items:center;
+      width:max-content; animation:marquee 28s linear infinite;
+    }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+    .marca-badge { font-family:'Fraunces',serif; font-size:16px; font-weight:600; color:var(--campo); letter-spacing:.5px; white-space:nowrap; opacity:.55; transition:opacity .2s; }
+    .marca-badge:hover { opacity:1; }
+    .marca-sep { color:var(--hoja); opacity:.3; }
+
+    /* ═══════════════════════════════════════
+       HISTORIA
+    ═══════════════════════════════════════ */
+    #historia {
+      padding:100px 6%; background:var(--crema);
+      display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center;
+    }
+    .hist-imgs { position:relative; }
+    .hist-img-main { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:3px; filter:sepia(10%) contrast(1.05); }
+    .hist-img-float {
+      position:absolute; bottom:-28px; right:-28px;
+      width:60%; aspect-ratio:16/9; object-fit:cover;
+      border:3px solid var(--crema); border-radius:5px;
+      box-shadow:0 20px 56px rgba(0,0,0,.18);
+    }
+    .hist-stamp {
+      position: relative; bottom: 20px; left:-20px;
+      background:var(--campo); color:#fff; padding:12px 22px; border-radius:3px;
+      font-size:11px; letter-spacing:3px; font-weight:600; text-transform:uppercase;
+      box-shadow:0 3px 10px rgba(0,0,0,.18);
+    }
+    .hist-title { font-family:'Fraunces',serif; font-size:clamp(32px,3.5vw,50px); font-weight:700; color:var(--tierra); line-height:1.1; margin-bottom:24px; }
+    .hist-title em { font-style:italic; color:var(--azul); }
+    .hist-text { font-size:15px; color:var(--gris); line-height:1.85; font-weight:300; margin-bottom:16px; }
+    .hist-firma { display:flex; align-items:center; gap:16px; margin-top:36px; padding-top:28px; border-top:1px solid rgba(45,122,31,.15); }
+    .firma-av {
+      width:52px; height:52px; border-radius:50%; flex-shrink:0;
+      background:linear-gradient(135deg,var(--campo),var(--hoja));
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Fraunces',serif; font-size:18px; color:#fff; font-weight:700;
+    }
+    .firma-info strong { display:block; font-size:14px; font-weight:600; color:var(--tierra); }
+    .firma-info span   { font-size:12px; color:var(--gris); }
+
+    /* ═══════════════════════════════════════
+       CONTACTO
+    ═══════════════════════════════════════ */
+    #contacto {
+      background:#1a1a1a;
+      padding:100px 6%;
+    }
+    .cto-inner { text-align:center; }
+    .cto-title {
+      font-family:'Fraunces',serif;
+      font-size:clamp(28px,4vw,48px); font-weight:700; color:#fff;
+      margin-bottom:16px;
+    }
+    .cto-sub {
+      font-size:15px; color:rgba(255,255,255,.5); font-weight:300;
+      margin-bottom:56px; max-width:520px;
+      margin-left:auto; margin-right:auto; line-height:1.7;
+    }
+    .cto-cards {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:24px; max-width:860px; margin:0 auto;
+    }
+    .cto-card {
+      background:#252525;
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px; padding:44px 28px 36px;
+      display:flex; flex-direction:column; align-items:center; gap:20px;
+      text-decoration:none; color:inherit;
+      transition:background .2s, transform .2s;
+    }
+    .cto-card:hover {
+      background:#2d2d2d;
+      transform:translateY(-4px);
+    }
+    .cto-card--static { cursor:default; }
+    .cto-card--static:hover { transform:none; background:#252525; }
+    .cto-card-icon {
+      width:68px; height:68px; border-radius:50%;
+      background:rgba(255,255,255,.1);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .cto-card-icon i { font-size:26px; color:#fff; }
+    .cto-card-title {
+      font-size:17px; font-weight:700; color:#fff; letter-spacing:.3px;
+    }
+    .cto-card-data {
+      font-size:14px; color:rgba(255,255,255,.45);
+      font-weight:300; line-height:1.6; text-align:center;
+    }
+    @media(max-width:768px) {
+      .cto-cards { grid-template-columns:1fr; max-width:320px; }
+    }
+
+
+
+    /* ── Font Awesome overrides ── */
+    .pq-icon i { font-size:18px; color:#f5b800; }
+    .canal-icon i { font-size:20px; color:#fff; }
+    .rubro-arrow-btn i { font-size:15px; }
+    .canal-arrow { font-size:unset; }
+    .canal-arrow i { font-size:13px; }
+    .fi-icon { font-size:14px; color:rgba(255,255,255,.45); margin-top:2px; flex-shrink:0; width:16px; text-align:center; }
+    .wa-float { font-size:28px; }
+    .nav-hamburger { background:none; border:none; cursor:pointer; padding:6px; display:none; }
+    .nav-hamburger i { font-size:22px; color:#fff; transition:color .3s; }
+    #navbar.solid .nav-hamburger i { color:var(--tierra); }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE HOME
+    ═══════════════════════════════════════ */
+    @media(max-width:1024px) {
+      #por-que { grid-template-columns:1fr; gap:40px; }
+      .pq-grid { grid-template-columns:1fr 1fr; }
+      #audiencias .aud-grid { grid-template-columns:1fr; }
+      #historia { grid-template-columns:1fr; gap:56px; }
+      .hist-img-float { display:none; }
+      .cto-grid { grid-template-columns:1fr; }
+      #marcas { flex-wrap:wrap; gap:24px; }
+    }
+    @media(max-width:768px) {
+      .hero-bar { grid-template-columns:1fr; }
+      .hbar-item { border-right:none; border-bottom:1px solid rgba(255,255,255,.06); }
+      .rubros-head { flex-direction:column; align-items:flex-start; gap:12px; }
+      .rh-sub { text-align:left; max-width:100%; }
+      .pq-grid { grid-template-columns:1fr; }
+      .rubro-row { grid-template-columns:60px 1fr auto; gap:16px; padding:20px 20px; }
+    }
+    @media(max-width:480px) {
+      .hero-h1 { letter-spacing:-1px; }
+      .aud-card { min-height:340px; }
+      .aud-name { font-size:26px; }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/42750a99cd.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.png" alt="Agroquímicos Darío  : green curved leaf with yellow sun, company name in blue text, established 1992 in Lavalle, Mendoza" class="nav-logo-name">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#">Productos</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li>
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+    </button>
+  </nav>
+
+  <!-- Menú mobile -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="semillas.html">Semillas</a>
+    <a href="nutricion.html">Nutrición Vegetal</a>
+    <a href="proteccion.html">Protección Vegetal</a>
+    <a href="herramientas.html">Herramientas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="index.html#marcas">Marcas</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="mobile-wa"><i class="fa-brands fa-whatsapp"></i> Escribinos por WhatsApp</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-trust">
+        <span class="trust-pill">Empresa familiar</span>
+        <span class="trust-sep"></span>
+        <span class="trust-text">La referencia del norte mendocino desde 1992</span>
+      </div>
+      <h1 class="hero-h1">
+        El campo<br>empieza<br>con <em>nosotros.</em>
+      </h1>
+      <p class="hero-desc">
+        Semillas, nutrición vegetal, protección y herramientas para el productor mendocino. Asesoramiento técnico real, entrega en zona y 30 años de trayectoria que respaldan cada producto.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="btn-wa">
+          <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+        <a href="#rubros" class="btn-outline">Ver productos →</a>
+      </div>
+    </div>
+    <div class="hero-bar">
+      <div class="hbar-item">
+        <span class="hbar-num">30+</span>
+        <span class="hbar-label">Años en el<br>mercado</span>
+      </div>
+      <div class="hbar-item">
+        <span class="hbar-num">4</span>
+        <span class="hbar-label">Líneas de<br>productos</span>
+      </div>
+      <div class="hbar-item">
+        <span class="hbar-num">8+</span>
+        <span class="hbar-label">Marcas líderes<br>del sector</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       POR QUÉ ELEGIRNOS
+  ═══════════════════════════════════════════ -->
+  <section id="por-que">
+    <div class="r">
+      <span class="eyebrow eyebrow--light">¿Por qué elegirnos?</span>
+      <h2 class="pq-title">Lo que<br>nos diferencia</h2>
+    </div>
+    <div class="pq-grid">
+      <div class="pq-item r d1">
+        <div class="pq-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h4>Confianza familiar</h4>
+        <p>Tres décadas construyendo relaciones con el productor mendocino. Nuestra reputación la hicieron nuestros clientes.</p>
+      </div>
+      <div class="pq-item r d2">
+        <div class="pq-icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <h4>Asesoramiento técnico</h4>
+        <p>No solo vendemos productos — acompañamos cada etapa de tu campaña con criterio agronómico.</p>
+      </div>
+      <div class="pq-item r d3">
+        <div class="pq-icon"><i class="fa-solid fa-truck"></i></div>
+        <h4>Entregas en la zona</h4>
+        <p>Llegamos a Lavalle, Maipú, San Martín, Rivadavia y zonas aledañas. Sin complicaciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AUDIENCIAS
+  ═══════════════════════════════════════════ -->
+  <section id="audiencias">
+    <div class="aud-header r">
+      <span class="eyebrow eyebrow--green">¿Cuál es tu perfil?</span>
+      <h2 class="aud-title">Soluciones para<br>cada productor</h2>
+    </div>
+    <div class="aud-grid r d1">
+      <div class="aud-card">
+        <img src="assets/img/productor-familiar.png" alt="Pequeño productor agropecuario mendocino" loading="lazy">
+        <div class="aud-over"></div>
+        <div class="aud-content">
+          <span class="aud-tag">Pequeño productor</span>
+          <h3 class="aud-name">Producís<br>en familia</h3>
+          <p class="aud-desc">Te ayudamos a elegir los productos correctos para tu parcela, con precios accesibles y asesoramiento sin vueltas.</p>
+          <a href="https://wa.me/5492616613696?text=Hola,%20soy%20productor%20y%20necesito%20asesoramiento%20sobre:%20" target="_blank" rel="noopener" class="aud-cta">Consultar gratis →</a>
+        </div>
+      </div>
+      <div class="aud-card">
+        <img src="assets/img/empresa-agropecuaria.png" alt="Empresa agropecuaria mendocina" loading="lazy">
+        <div class="aud-over"></div>
+        <div class="aud-content">
+          <span class="aud-tag">Empresa agropecuaria</span>
+          <h3 class="aud-name">Operás<br>a escala</h3>
+          <p class="aud-desc">Volumen, variedad de marcas y un proveedor de confianza para asegurar tu campaña de principio a fin.</p>
+          <a href="https://wa.me/5492616613696?text=Hola,%20somos%20una%20empresa%20y%20necesitamos%20asesoramiento%20sobre:%20" target="_blank" rel="noopener" class="aud-cta">Hablar con un asesor →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RUBROS
+  ═══════════════════════════════════════════ -->
+  <section id="rubros">
+    <div class="rubros-head r">
+      <div>
+        <span class="eyebrow eyebrow--green">Nuestros productos</span>
+        <h2 class="rh-title">Todo lo que<br>necesita tu campo</h2>
+      </div>
+      <p class="rh-sub">Consultá disponibilidad y precios por WhatsApp. Respondemos el mismo día.</p>
+    </div>
+    <div class="rubros-list">
+      <a href="semillas.html" class="rubro-row r d1">
+        <span class="rubro-n">01</span>
+        <div class="rubro-info">
+          <strong>Semillas</strong>
+          <span>Variedades de alta performance · Summer Seeds, Fusari y más</span>
+        </div>
+        <div class="rubro-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="nutricion.html" class="rubro-row r d2">
+        <span class="rubro-n">02</span>
+        <div class="rubro-info">
+          <strong>Nutrición Vegetal</strong>
+          <span>Fertilizantes y bioinsumos · Timac Agro, Bunge, Nutrien</span>
+        </div>
+        <div class="rubro-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="proteccion.html" class="rubro-row r d3">
+        <span class="rubro-n">03</span>
+        <div class="rubro-info">
+          <strong>Protección Vegetal</strong>
+          <span>Herbicidas, fungicidas e insecticidas · BASF, Gleba y más</span>
+        </div>
+        <div class="rubro-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="herramientas.html" class="rubro-row r d4">
+        <span class="rubro-n">04</span>
+        <div class="rubro-info">
+          <strong>Herramientas y Equipos</strong>
+          <span>Implementos y accesorios de trabajo · Jacto, Agrale y más</span>
+        </div>
+        <div class="rubro-arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MARCAS
+  ═══════════════════════════════════════════ -->
+  <section id="marcas">
+    <span class="marcas-label">Trabajamos con</span>
+    <div class="marcas-sep"></div>
+    <div class="marcas-scroll">
+      <div class="marcas-track">
+        <span class="marca-badge">JACTO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BASF</span><span class="marca-sep">·</span>
+        <span class="marca-badge">GLEBA</span><span class="marca-sep">·</span>
+        <span class="marca-badge">TIMAC AGRO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BASSO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BUNGE</span><span class="marca-sep">·</span>
+        <span class="marca-badge">SUMMER SEEDS</span><span class="marca-sep">·</span>
+        <span class="marca-badge">NUTRIEN</span><span class="marca-sep">·</span>
+        <span class="marca-badge">AGRALE</span><span class="marca-sep">·</span>
+        <!-- duplicado para loop continuo -->
+        <span class="marca-badge">JACTO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BASF</span><span class="marca-sep">·</span>
+        <span class="marca-badge">GLEBA</span><span class="marca-sep">·</span>
+        <span class="marca-badge">TIMAC AGRO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BASSO</span><span class="marca-sep">·</span>
+        <span class="marca-badge">BUNGE</span><span class="marca-sep">·</span>
+        <span class="marca-badge">SUMMER SEEDS</span><span class="marca-sep">·</span>
+        <span class="marca-badge">NUTRIEN</span><span class="marca-sep">·</span>
+        <span class="marca-badge">AGRALE</span><span class="marca-sep">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HISTORIA
+  ═══════════════════════════════════════════ -->
+  <section id="historia">
+    <div class="hist-imgs r">
+      <span class="hist-stamp">Est. 1992 · Lavalle</span>
+      <!-- Reemplazar con fotos reales del negocio -->
+      <img src="assets/img/historia-campo.jpg" alt="Campo mendocino norte" class="hist-img-main" loading="lazy">
+      <img src="assets/img/historia-equipo.jpg" alt="Equipo Agroquímicos Darío" class="hist-img-float" loading="lazy">
+    </div>
+    <div class="hist-content r d2">
+      <span class="eyebrow eyebrow--green">Nuestra historia</span>
+      <h2 class="hist-title">30 años siendo<br>el proveedor<br>de <em>confianza</em></h2>
+      <p class="hist-text">
+        Todo empezó en 1992 cuando Roberto Fusari decidió apostar al norte mendocino con una empresa familiar de agroquímicos. En 1998 se sumó su hijo Darío como Gerente General, y desde entonces el proyecto no paró de crecer.
+      </p>
+      <p class="hist-text">
+        Hoy somos la empresa más destacada de la zona. No porque tengamos el catálogo más grande, sino porque cuando un productor necesita una respuesta, nos llama a nosotros.
+      </p>
+      <div class="hist-firma">
+        <div class="firma-av">DF</div>
+        <div class="firma-info">
+          <strong>Darío J. Fusari</strong>
+          <span>Gerente General · Agroquímicos Darío</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACTO
+  ═══════════════════════════════════════════ -->
+  <section id="contacto">
+    <div class="cto-inner">
+      <h2 class="cto-title">Vías de Contacto</h2>
+      <p class="cto-sub">Estamos listos para asesorarte. ¡Contactanos y empezá a crear el campo de tus sueños!</p>
+
+      <div class="cto-cards">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="cto-card r d1">
+          <div class="cto-card-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <span class="cto-card-title">WhatsApp</span>
+          <span class="cto-card-data">+54 9 261 661-3696</span>
+        </a>
+
+        <!-- Nuestro Local -->
+        <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" class="cto-card r d2">
+          <div class="cto-card-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <span class="cto-card-title">Nuestro Local</span>
+          <span class="cto-card-data">Lavalle, Mendoza<br>Argentina</span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/agroquimicos_dario" target="_blank" rel="noopener" class="cto-card r d3">
+          <div class="cto-card-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <span class="cto-card-title">Instagram</span>
+          <span class="cto-card-data">@agroquimicos_dario</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/foot.png" alt="footer logo" style="padding-bottom: 20px;">
+        <p class="footer-brand-sub">Lavalle, Mendoza · Argentina · Est. 1992</p>
+        <p class="footer-brand-desc">Empresa familiar con más de 30 años brindando soluciones agrícolas de calidad al pequeño y mediano productor del norte mendocino.</p>
+        <div class="footer-emails">
+          <a href="#" class="email-link" data-u="info"        data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="ventas"      data-d="agroquimicosdario.com.ar">ventas@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="proveedores" data-d="agroquimicosdario.com.ar">proveedores@agroquimicosdario.com.ar</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <ul class="footer-col-links">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html">Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Empresa</p>
+        <ul class="footer-col-links">
+          <li><a href="nosotros.html">Nuestra historia</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-mobile-screen fi-icon"></i>
+          <a href="https://wa.me/5492616613696">+54 9 261 661-3696</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope fi-icon"></i>
+          <a href="#" class="email-link" data-u="info" data-d="agroquimicosdario.com.ar">
+            info@agroquimicosdario.com.ar
+          </a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot fi-icon"></i>
+          <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Lavalle, Mendoza<br>Argentina</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-regular fa-clock fi-icon"></i>
+          <span>Lun–Vie 8:00 a 18:00 hs</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Agroquímicos Darío — Todos los derechos reservados</span>
+      <span>Design by <a href="https://www.instagram.com/goodideaest/" target="_blank" rel="noopener">Good Ideas Studio</a></span>
+      <span>agroquimicosdario.com.ar</span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="wa-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('solid', window.scrollY > 50);
+    });
+
+    /* ── Menú hamburguesa ── */
+    const hamburger    = document.getElementById('hamburger');
+    const mobileMenu   = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerIcon.classList.toggle('fa-bars');
+      hamburgerIcon.classList.toggle('fa-xmark');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerIcon.classList.add('fa-bars');
+        hamburgerIcon.classList.remove('fa-xmark');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    const revealEls = document.querySelectorAll('.r');
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: 0.08 }).observe
+    ;(()=>{
+      const io = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('on')), { threshold: 0.08 });
+      document.querySelectorAll('.r').forEach(el => io.observe(el));
+    })();
+
+    /* ── Dropdown navbar (con delay para evitar cierre accidental) ── */
+    document.querySelectorAll('.nav-dropdown').forEach(item => {
+      const menu = item.querySelector('.nav-dropdown-menu');
+      let closeTimer;
+
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimer);
+        menu.classList.add('open');
+      });
+      item.addEventListener('mouseleave', () => {
+        closeTimer = setTimeout(() => menu.classList.remove('open'), 200);
+      });
+      menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => {
+        closeTimer = setTimeout(() => menu.classList.remove('open'), 200);
+      });
+    });
+    /* ── Emails: ensamblar href para evitar ofuscación del servidor ── */
+      document.querySelectorAll('.email-link').forEach(el => {
+        const addr = el.dataset.u + '@' + el.dataset.d;
+        el.href = 'mailto:' + addr;
+      });
+  </script>
+</body>
+</html>

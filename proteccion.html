@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Protección Vegetal — Agroquímicos Darío | Lavalle, Mendoza</title>
+  <meta name="description" content="Control de plagas, malezas y enfermedades para todos tus cultivos. Herbicidas, fungicidas e insecticidas de BASF, Gleba y más. Asesoramiento técnico en Lavalle, Mendoza.">
+  <meta name="keywords" content="proteccion vegetal mendoza, herbicidas mendoza, fungicidas, insecticidas, control plagas, control malezas, BASF, Gleba, lavalle mendoza">
+  <link rel="canonical" href="https://agroquimicosdario.com.ar/proteccion.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Protección Vegetal — Agroquímicos Darío">
+  <meta property="og:description" content="Protección integral para tus cultivos. Control de plagas, malezas y enfermedades con asesoramiento técnico permanente.">
+  <meta property="og:url" content="https://agroquimicosdario.com.ar/proteccion.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .page-hero {
+      min-height: 420px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 120px 6% 64px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background: url('assets/img/proteccion-hero.jpg') center/cover no-repeat;
+    }
+    .page-hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(8,15,7,.88) 0%, rgba(13,31,10,.65) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 900; line-height: .95;
+      color: #fff; letter-spacing: -2px; margin-bottom: 16px;
+    }
+    .page-hero h1 em { font-style: italic; color: #f5b800; font-weight: 300; }
+    .page-hero-desc {
+      font-size: 17px; color: rgba(255,255,255,.6);
+      font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 36px;
+    }
+    .page-hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb .sep { color: rgba(255,255,255,.2); }
+    .breadcrumb .current { color: #f5b800; font-weight: 500; }
+
+    /* ═══════════════════════════════════════
+       INTRO
+    ═══════════════════════════════════════ */
+    #intro {
+      padding: 72px 6%;
+      background: var(--crema);
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .intro-text .section-lead {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--tierra); margin-bottom: 20px;
+    }
+    .intro-text .section-lead em { font-style: italic; color: var(--campo); }
+    .intro-text p {
+      font-size: 15px; color: var(--gris);
+      line-height: 1.85; font-weight: 300; margin-bottom: 14px;
+    }
+    .intro-text p:last-of-type { margin-bottom: 0; }
+
+    .cult-pills {
+      margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .cult-pill {
+      background: var(--humo);
+      border: 1px solid rgba(45,122,31,.2);
+      color: var(--campo);
+      font-size: 12px; font-weight: 600; letter-spacing: .5px;
+      padding: 6px 14px; border-radius: 50px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cult-pill i { font-size: 11px; }
+
+    .intro-marcas h3 {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--campo); font-weight: 600; margin-bottom: 24px;
+    }
+    .marcas-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    }
+    .marca-card {
+      background: #fff;
+      border: 1px solid rgba(45,122,31,.1);
+      border-radius: 8px; padding: 24px 16px;
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 3/2;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .marca-card:hover {
+      border-color: rgba(45,122,31,.3);
+      box-shadow: 0 4px 16px rgba(45,122,31,.08);
+    }
+    .marca-card span {
+      font-family: 'Fraunces', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--campo); letter-spacing: .5px; text-align: center;
+    }
+    .marca-card img { max-width: 80%; max-height: 40px; object-fit: contain; }
+
+    /* ═══════════════════════════════════════
+       LÍNEAS DE PRODUCTO
+    ═══════════════════════════════════════ */
+    #lineas {
+      padding: 80px 6% 100px;
+      background: var(--humo);
+    }
+    .lineas-header { margin-bottom: 56px; }
+    .lineas-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; color: var(--tierra); line-height: 1.1;
+    }
+    .lineas-header h2 em { font-style: italic; color: var(--campo); }
+    .lineas-header p {
+      font-size: 15px; color: var(--gris); font-weight: 300;
+      max-width: 560px; line-height: 1.7; margin-top: 12px;
+    }
+
+    .lineas-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .linea-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(45,122,31,.08);
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .linea-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .linea-img {
+      aspect-ratio: 4/3; overflow: hidden; position: relative;
+    }
+    .linea-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .5s ease; filter: sepia(10%) brightness(.95);
+    }
+    .linea-card:hover .linea-img img { transform: scale(1.05); }
+    .linea-num {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--campo); color: #fff;
+      font-family: 'Fraunces', serif;
+      font-size: 13px; font-weight: 700;
+      padding: 4px 12px; border-radius: 50px; letter-spacing: 1px;
+    }
+    .linea-body { padding: 24px; }
+    .linea-icon {
+      width: 44px; height: 44px;
+      background: rgba(45,122,31,.08);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .linea-icon i { font-size: 20px; color: var(--campo); }
+    .linea-titulo {
+      font-family: 'Fraunces', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--tierra); margin-bottom: 10px;
+    }
+    .linea-desc {
+      font-size: 13px; color: var(--gris);
+      line-height: 1.7; font-weight: 300; margin-bottom: 20px;
+    }
+    .linea-ejemplos {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+    }
+    .ej-pill {
+      background: var(--humo);
+      border: 1px solid rgba(45,122,31,.15);
+      color: var(--gris);
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 50px;
+    }
+    .linea-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid rgba(45,122,31,.08);
+    }
+    .linea-cta a {
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--campo);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap .2s;
+    }
+    .linea-cta a:hover { gap: 10px; }
+    .linea-cta .wa-mini {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #25d366; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      transition: transform .2s, filter .2s;
+    }
+    .linea-cta .wa-mini i { font-size: 15px; color: #fff; }
+    .linea-cta .wa-mini:hover { transform: scale(1.08); filter: brightness(1.07); }
+
+    /* ═══════════════════════════════════════
+       ASESORAMIENTO
+    ═══════════════════════════════════════ */
+    #asesoramiento {
+      padding: 80px 6%;
+      background: var(--tierra);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #asesoramiento::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .asesoria-content { position: relative; z-index: 1; }
+    .asesoria-content .eyebrow { color: var(--amarillo); margin-bottom: 12px; display: block; }
+    .asesoria-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 20px;
+    }
+    .asesoria-title em { font-style: italic; color: var(--amarillo); }
+    .asesoria-text {
+      font-size: 15px; color: rgba(255,255,255,.6);
+      line-height: 1.85; font-weight: 300; margin-bottom: 16px;
+    }
+    .asesoria-pasos {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 32px;
+    }
+    .paso {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px; padding: 16px 20px;
+    }
+    .paso-num {
+      font-family: 'Fraunces', serif;
+      font-size: 28px; font-weight: 900;
+      color: var(--amarillo); line-height: 1; flex-shrink: 0; width: 36px;
+    }
+    .paso-info h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .paso-info p  { font-size: 13px; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.5; }
+
+    .asesoria-cta { position: relative; z-index: 1; }
+    .asesoria-cta-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px; padding: 40px;
+      display: flex; flex-direction: column; gap: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .asesoria-cta-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px; color: #fff; font-weight: 700; line-height: 1.2;
+    }
+    .asesoria-cta-card p {
+      font-size: 14px; color: rgba(255,255,255,.5); font-weight: 300; line-height: 1.7;
+    }
+    .btn-wa-full {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #25d366; color: #fff;
+      padding: 16px; border-radius: 50px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 3px 12px rgba(0,0,0,.2);
+      transition: filter .2s, transform .2s;
+    }
+    .btn-wa-full:hover { filter: brightness(1.07); transform: translateY(-2px); }
+    .btn-wa-full i { font-size: 18px; }
+    .asesoria-divider {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .asesoria-divider::before, .asesoria-divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1);
+    }
+    .asesoria-divider span { font-size: 11px; color: rgba(255,255,255,.3); letter-spacing: 2px; }
+    .asesoria-email-link {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      color: rgba(255,255,255,.6); text-decoration: none;
+      font-size: 14px; font-weight: 300; transition: color .2s;
+    }
+    .asesoria-email-link:hover { color: #fff; }
+    .asesoria-email-link i { font-size: 15px; color: var(--azul); }
+
+    /* ═══════════════════════════════════════
+       CTA FINAL
+    ═══════════════════════════════════════ */
+    #cta-final {
+      background: var(--campo);
+      padding: 80px 6%;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+    }
+    .cta-final-text h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 10px;
+    }
+    .cta-final-text h2 em { font-style: italic; color: #f5b800; }
+    .cta-final-text p { font-size: 15px; color: rgba(255,255,255,.6); font-weight: 300; }
+    .cta-final-btns {
+      display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+    }
+    .btn-amarillo {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #f5b800; color: var(--tierra);
+      padding: 15px 28px; border-radius: 50px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      letter-spacing: .5px; white-space: nowrap;
+      transition: filter .2s, transform .2s;
+    }
+    .btn-amarillo:hover { filter: brightness(1.08); transform: translateY(-2px); }
+    .btn-link-blanco {
+      font-size: 13px; color: rgba(255,255,255,.6); text-decoration: none;
+      display: flex; align-items: center; gap: 6px; transition: color .2s;
+    }
+    .btn-link-blanco:hover { color: #fff; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media(max-width: 1024px) {
+      .lineas-grid { grid-template-columns: repeat(2, 1fr); }
+      #asesoramiento { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media(max-width: 900px) {
+      #intro { grid-template-columns: 1fr; gap: 48px; }
+      #cta-final { grid-template-columns: 1fr; }
+      .cta-final-btns { align-items: flex-start; }
+    }
+    @media(max-width: 640px) {
+      .lineas-grid { grid-template-columns: 1fr; }
+      .marcas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/42750a99cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logo.png" alt="Agroquímicos Darío" class="nav-logo-name">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" class="active">Productos</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html" style="color:var(--campo)!important;font-weight:600">● Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="index.html#marcas">Marcas</a></li>
+      <li>
+        <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+    </button>
+  </nav>
+
+  <!-- Menú mobile -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="semillas.html">Semillas</a>
+    <a href="nutricion.html">Nutrición Vegetal</a>
+    <a href="proteccion.html" style="color:var(--campo)">Protección Vegetal</a>
+    <a href="herramientas.html">Herramientas</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="index.html#marcas">Marcas</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="mobile-wa">
+      <i class="fa-brands fa-whatsapp"></i> Escribinos por WhatsApp
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span class="sep">/</span>
+        <span class="current">Protección Vegetal</span>
+      </nav>
+      <h1>Protección integral<br>para <em>tus cultivos</em></h1>
+      <p class="page-hero-desc">
+        El más extenso surtido de productos para proteger tu producción en todos los cultivos.
+        Asesoramiento técnico permanente de nuestros ingenieros agrónomos.
+      </p>
+      <div class="page-hero-actions">
+        <a href="#lineas" class="btn-wa">
+          <i class="fa-solid fa-shield-halved"></i> Ver líneas de productos
+        </a>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20protecci%C3%B3n%20vegetal" target="_blank" rel="noopener" class="btn-outline">
+          Consultar ahora <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO + MARCAS
+  ═══════════════════════════════════════════ -->
+  <section id="intro">
+    <div class="intro-text r">
+      <h2 class="section-lead">
+        Tu producción<br>protegida en<br><em>cada etapa</em>
+      </h2>
+      <p>
+        Brindamos soporte técnico permanente de nuestros ingenieros agrónomos a los productores hortícolas. Nuestra misión es que te sientas orgulloso de tu trabajo y que tengas la mayor producción al menor costo posible.
+      </p>
+      <p>
+        Contamos con el más extenso surtido de productos para mejorar y proteger tu producción en todos los cultivos del norte mendocino.
+      </p>
+      <div class="cult-pills">
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Hortalizas</span>
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Frutales</span>
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Viña</span>
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Ajo</span>
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Cebolla</span>
+        <span class="cult-pill"><i class="fa-solid fa-circle-check"></i> Cucurbitáceas</span>
+      </div>
+    </div>
+    <div class="intro-marcas r d2">
+      <h3>Marcas con las que trabajamos</h3>
+      <div class="marcas-grid">
+        <div class="marca-card"><span>BASF</span></div>
+        <div class="marca-card"><span>GLEBA</span></div>
+        <div class="marca-card"><span>BASSO</span></div>
+        <div class="marca-card" style="background:var(--humo);border-style:dashed">
+          <span style="font-size:12px;opacity:.5">+ más marcas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LÍNEAS DE PRODUCTO
+  ═══════════════════════════════════════════ -->
+  <section id="lineas">
+    <div class="lineas-header r">
+      <span class="eyebrow eyebrow--green">Nuestras líneas</span>
+      <h2>Protección para<br>cada <em>amenaza</em></h2>
+      <p>Cubrimos los tres frentes de riesgo que puede enfrentar tu cultivo a lo largo de la campaña.</p>
+    </div>
+
+    <div class="lineas-grid">
+
+      <!-- 01 · CONTROL DE PLAGAS -->
+      <div class="linea-card r d1">
+        <div class="linea-img">
+          <img src="assets/img/proteccion-plagas.jpeg" alt="Control de plagas" loading="lazy">
+          <span class="linea-num">01</span>
+        </div>
+        <div class="linea-body">
+          <div class="linea-icon"><i class="fa-solid fa-bug-slash"></i></div>
+          <h3 class="linea-titulo">Control de plagas</h3>
+          <p class="linea-desc">
+            Insecticidas y acaricidas para el control efectivo de plagas que afectan el rendimiento y la calidad de tus cultivos. Soluciones para plagas de suelo y de follaje.
+          </p>
+          <div class="linea-ejemplos">
+            <span class="ej-pill">Insecticidas</span>
+            <span class="ej-pill">Acaricidas</span>
+            <span class="ej-pill">Nematicidas</span>
+            <span class="ej-pill">Cebos granulados</span>
+          </div>
+          <div class="linea-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20plagas" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20plagas" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 · CONTROL DE MALEZAS -->
+      <div class="linea-card r d2">
+        <div class="linea-img">
+          <img src="assets/img/proteccion-malezas.jpeg" alt="Control de malezas" loading="lazy">
+          <span class="linea-num">02</span>
+        </div>
+        <div class="linea-body">
+          <div class="linea-icon"><i class="fa-solid fa-vial-virus"></i></div>
+          <h3 class="linea-titulo">Control de malezas</h3>
+          <p class="linea-desc">
+            Herbicidas selectivos y de amplio espectro para mantener el cultivo libre de competencia. Aplicaciones en pre y post emergencia según el sistema de producción.
+          </p>
+          <div class="linea-ejemplos">
+            <span class="ej-pill">Herbicidas selectivos</span>
+            <span class="ej-pill">Glifosato</span>
+            <span class="ej-pill">Pre-emergentes</span>
+            <span class="ej-pill">Post-emergentes</span>
+          </div>
+          <div class="linea-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20malezas" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20malezas" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 · CONTROL DE ENFERMEDADES -->
+      <div class="linea-card r d3">
+        <div class="linea-img">
+          <img src="assets/img/proteccion-enfermedades.jpeg" alt="Control de enfermedades" loading="lazy">
+          <span class="linea-num">03</span>
+        </div>
+        <div class="linea-body">
+          <div class="linea-icon"><i class="fa-solid fa-shield-virus"></i></div>
+          <h3 class="linea-titulo">Control de enfermedades</h3>
+          <p class="linea-desc">
+            Fungicidas e bactericidas para prevenir y controlar enfermedades fúngicas y bacterianas que comprometen la producción. Protección preventiva y curativa.
+          </p>
+          <div class="linea-ejemplos">
+            <span class="ej-pill">Fungicidas</span>
+            <span class="ej-pill">Bactericidas</span>
+            <span class="ej-pill">Cúpricos</span>
+            <span class="ej-pill">Biocontroladores</span>
+          </div>
+          <div class="linea-cta">
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20enfermedades" target="_blank" rel="noopener">
+              Consultar <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20control%20de%20enfermedades" target="_blank" rel="noopener" class="wa-mini">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ASESORAMIENTO
+  ═══════════════════════════════════════════ -->
+  <section id="asesoramiento">
+    <div class="asesoria-content r">
+      <span class="eyebrow">Nuestro servicio</span>
+      <h2 class="asesoria-title">Soporte técnico<br><em>permanente</em></h2>
+      <p class="asesoria-text">
+        No alcanza con tener el producto correcto — hay que saber cuándo y cómo aplicarlo. Nuestros ingenieros te acompañan en cada decisión para maximizar el efecto y minimizar costos.
+      </p>
+      <div class="asesoria-pasos">
+        <div class="paso">
+          <span class="paso-num">1</span>
+          <div class="paso-info">
+            <h4>Diagnóstico en campo</h4>
+            <p>Identificamos la plaga, maleza o enfermedad presente y evaluamos el nivel de daño económico.</p>
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-num">2</span>
+          <div class="paso-info">
+            <h4>Elección del producto</h4>
+            <p>Seleccionamos el agroquímico más eficaz, seguro y económico para tu situación específica.</p>
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-num">3</span>
+          <div class="paso-info">
+            <h4>Seguimiento del resultado</h4>
+            <p>Monitoreamos la efectividad del tratamiento y ajustamos si es necesario para asegurar el control.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="asesoria-cta r d2">
+      <div class="asesoria-cta-card">
+        <h3>Consultá la protección<br>para tu cultivo</h3>
+        <p>Contanos qué problema tenés y te asesoramos sin costo.</p>
+        <a href="https://wa.me/5492616613696?text=Hola,%20quiero%20consultar%20sobre%20protecci%C3%B3n%20para%20mi%20cultivo" target="_blank" rel="noopener" class="btn-wa-full">
+          <i class="fa-brands fa-whatsapp"></i> Hablar con un asesor
+        </a>
+        <div class="asesoria-divider"><span>o escribinos al email</span></div>
+        <a href="#" class="asesoria-email-link email-link" data-u="ventas" data-d="agroquimicosdario.com.ar">
+          <i class="fa-solid fa-envelope"></i>
+          ventas@agroquimicosdario.com.ar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ═══════════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="cta-final-text r">
+      <h2>¿Necesitás un producto<br>que no encontrás <em>acá?</em></h2>
+      <p>Trabajamos con muchas más marcas y podemos conseguir lo que necesitás.</p>
+    </div>
+    <div class="cta-final-btns r d2">
+      <a href="https://wa.me/5492616613696?text=Hola,%20busco%20un%20producto%20de%20protecci%C3%B3n%20vegetal%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener" class="btn-amarillo">
+        <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/foot.png" alt="footer logo" style="padding-bottom: 20px;">
+        <p class="footer-brand-sub">Lavalle, Mendoza · Argentina · Est. 1992</p>
+        <p class="footer-brand-desc">Empresa familiar con más de 30 años brindando soluciones agrícolas de calidad al pequeño y mediano productor del norte mendocino.</p>
+        <div class="footer-emails">
+          <a href="#" class="email-link" data-u="info"        data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="ventas"      data-d="agroquimicosdario.com.ar">ventas@agroquimicosdario.com.ar</a>
+          <a href="#" class="email-link" data-u="proveedores" data-d="agroquimicosdario.com.ar">proveedores@agroquimicosdario.com.ar</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Productos</p>
+        <ul class="footer-col-links">
+          <li><a href="semillas.html">Semillas</a></li>
+          <li><a href="nutricion.html">Nutrición Vegetal</a></li>
+          <li><a href="proteccion.html" style="color:rgba(255,255,255,.75)">Protección Vegetal</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Empresa</p>
+        <ul class="footer-col-links">
+          <li><a href="nosotros.html">Nuestra historia</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-mobile-screen fi-icon"></i>
+          <a href="https://wa.me/5492616613696">+54 9 261 661-3696</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope fi-icon"></i>
+          <a href="#" class="email-link" data-u="info" data-d="agroquimicosdario.com.ar">info@agroquimicosdario.com.ar</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot fi-icon"></i>
+          <a href="https://maps.app.goo.gl/kVqVmGiRL3Zw5Kdv9" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Lavalle, Mendoza<br>Argentina</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-regular fa-clock fi-icon"></i>
+          <span>Lun–Vie 8:00 a 18:00 hs</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Agroquímicos Darío — Todos los derechos reservados</span>
+      <span>Design by <a href="https://www.instagram.com/goodideaest/" target="_blank" rel="noopener">Good Ideas Studio</a></span>
+      <span>agroquimicosdario.com.ar</span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5492616613696" target="_blank" rel="noopener" class="wa-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('solid', window.scrollY > 50);
+    });
+
+    /* ── Menú hamburguesa ── */
+    const hamburger     = document.getElementById('hamburger');
+    const mobileMenu    = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerIcon.classList.toggle('fa-bars');
+      hamburgerIcon.classList.toggle('fa-xmark');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerIcon.classList.add('fa-bars');
+        hamburgerIcon.classList.remove('fa-xmark');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    ;(()=>{
+      const io = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('on')), { threshold: 0.07 });
+      document.querySelectorAll('.r').forEach(el => io.observe(el));
+    })();
+
+    /* ── Dropdown navbar (con delay para evitar cierre accidental) ── */
+    document.querySelectorAll('.nav-dropdown').forEach(item => {
+      const menu = item.querySelector('.nav-dropdown-menu');
+      let closeTimer;
+      item.addEventListener('mouseenter', () => { clearTimeout(closeTimer); menu.classList.add('open'); });
+      item.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+      menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 200); });
+    });
+
+    /* ── Emails: ensamblar href para evitar ofuscación del servidor ── */
+    document.querySelectorAll('.email-link').forEach(el => {
+      const addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+    });
+  </script>
+</body>
+</html>
